@@ -5,6 +5,7 @@ div.sign-in {
     padding: 20px;
     border-radius: 30px;
     font-weight: 700;
+    box-shadow: 10px 10px 30px #001d17;
 }
 
 .button_sign-in{
