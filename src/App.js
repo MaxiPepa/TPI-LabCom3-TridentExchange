@@ -1,9 +1,11 @@
 import "./App.css";
 
+import NavBar from "./components/Header/NavBar/NavBar";
+
 const App = () => {
   return (
     <>
-      <h1>TRIDENT CHANGES</h1>
+      <NavBar />
     </>
   );
 }
