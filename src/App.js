@@ -5,10 +5,10 @@ import NavBar from "./components/Header/NavBar/NavBar";
 
 const App = () => {
   return (
-    <>
+    <div className="main-program">
       <NavBar />
       <Footer />
-    </>
+    </div>
   );
 }
 
