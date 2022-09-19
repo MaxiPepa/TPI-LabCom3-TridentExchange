@@ -1,0 +1,9 @@
+.register-content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.281);
+    box-shadow: 10px 5px 20px rgba(29, 29, 29, 0.733);
+    border-radius: 20px;
+    margin: 5%;
+    padding: 25px;
+}
