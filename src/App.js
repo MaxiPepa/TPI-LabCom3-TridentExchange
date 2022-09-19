@@ -1,14 +1,14 @@
 import "./App.css";
 
 import NavBar from "./components/Header/NavBar/NavBar";
-import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Footer from "./components/Footer/Footer";
+import NewUser from "./components/RegisterForm/NewUser/NewUser";
 
 const App = () => {
   return (
     <div className="main-program">
       <NavBar />
-      <RegisterForm />
+      <NewUser />
       <Footer />
     </div>
   );
