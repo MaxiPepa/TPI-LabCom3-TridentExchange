@@ -8,10 +8,12 @@ const App = () => {
   return (
     <div className="main-program">
       <NavBar />
-      <NewUser />
+      <div className="register-form">
+        <NewUser />
+      </div>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

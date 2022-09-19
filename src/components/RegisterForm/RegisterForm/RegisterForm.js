@@ -11,6 +11,7 @@ const RegisterForm = () => {
         <input type="password" id="password"></input>
         <label for="repeat-password">Repetir contraseña:</label>
         <input type="password" id="repeat-password"></input>
+        <button type="button">Registrarse</button>
       </form>
     </>
   );

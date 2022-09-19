@@ -22,7 +22,7 @@ const NewUser = () => {
             onClick={showFormHandler}
             type="button"
           >
-            ¡Registrate!
+            ¡Regístrate!
           </button>
         </div>
       )}
