@@ -3,3 +3,7 @@
     flex-direction: column;
     min-height: 100vh;
 }
+
+.register-form {
+    align-self: center;
+}
