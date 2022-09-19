@@ -1,0 +1,10 @@
+div.sign-in {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
