@@ -1,5 +1,7 @@
 import "./NavBar.css";
 
+import SignIn from "../SingIn/SignIn";
+
 const NavBar = () => {
   return (
     <header>
