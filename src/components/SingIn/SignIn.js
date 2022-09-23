@@ -9,7 +9,7 @@ const SignIn = () => {
       <input type="password" id="password"/>
       <div className="button_sign-in">
         <button type="button">Iniciar Sesión</button>
-        <button type="button">Registrase</button>
+        
       </div>
     </div>
   );
