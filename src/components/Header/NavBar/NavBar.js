@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <header>
       <nav>
-        <h1>Trident Exchanges</h1>
+        <img src="/img/trident-exchange-logo.png" alt="Trident Exchange Logo" />
       </nav>
     </header>
   );
