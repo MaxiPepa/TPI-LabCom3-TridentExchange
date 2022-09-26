@@ -33,21 +33,7 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-<<<<<<< HEAD
   return <RouterProvider router={router} />;
-=======
-  return (
-    <div className="main-program">
-      <NavBar />
-      <SignIn/>
-
-      <div className="register-form">
-        <NewUser />
-      </div>
-      <Footer />
-    </div>
-  );
->>>>>>> 63a5dc1 (noCommit)
 };
 
 export default App;
