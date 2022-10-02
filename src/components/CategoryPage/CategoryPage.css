@@ -1,0 +1,14 @@
+.category-container {
+    display: flex;
+    justify-content: center;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+}
