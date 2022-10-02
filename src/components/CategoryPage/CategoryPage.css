@@ -12,3 +12,20 @@
     border: 3px solid black;
     border-radius: 20px;
 }
+
+.category-item {
+    background-color:#093030;
+    border-radius: 20px;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    border: none; 
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.category-item:hover{
+    background-color: #228d8d;
+    color: black;
+    font-weight: 700;
+}

@@ -1,36 +1,32 @@
-import "./CategoryPage.css"
+import { Link } from "react-router-dom";
+
+import "./CategoryPage.css";
+
 
 const CategoryPage = () => {
   return (
     <div className="category-container">
-      <button type="button" className="category-item">
-        <img alt=""/>
+      <Link to="electrodomesticos" className="category-item">
         <h1>Electrodomésticos</h1>
-      </button>
-      <button type="button" className="category-item">
-        <img alt=""/>
+      </Link>
+      <Link to="muebles" className="category-item">
         <h1>Muebles</h1>
-      </button>
-      <button type="button" className="category-item">
-        <img alt=""/>
+      </Link>
+      <Link to="cocina" className="category-item">
         <h1>Cocina</h1>
-      </button>
-      <button type="button" className="category-item">
-        <img alt=""/>
+      </Link>
+      <Link to="electronica" className="category-item">
         <h1>Electrónica</h1>
-      </button>
-      <button type="button" className="category-item">
-        <img alt=""/>
+      </Link>
+      <Link to="patio" className="category-item">
         <h1>Patio</h1>
-      </button>
-      <button type="button" className="category-item">
-        <img alt=""/>
+      </Link>
+      <Link to="juegueteria" className="category-item">
         <h1>Juguetería</h1>
-      </button>
-      <button type="button" className="category-item">
-        <img alt=""/>
-        <h1>Electrodomésticos</h1>
-      </button>
+      </Link>
+      <Link to="materiales" className="category-item">
+        <h1>Materiales</h1>
+      </Link>
     </div>
   );
 };
