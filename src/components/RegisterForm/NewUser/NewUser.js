@@ -4,6 +4,7 @@ import "./NewUser.css"
 
 import RegisterForm from "../RegisterForm/RegisterForm";
 
+
 const NewUser = () => {
   const [showForm, setShowForm] = useState(false);
 

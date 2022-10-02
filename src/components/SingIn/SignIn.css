@@ -1,4 +1,5 @@
 div.sign-in {
+    width: 250px;
     display: flex;
     flex-direction: column;
     background-color: #a6d3d3;

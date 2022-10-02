@@ -11,14 +11,18 @@ import "./App.css";
 import CategoryPage from "./components/CategoryPage/CategoryPage";
 import OfferPreview from "./components/OfferPreview/OfferPreview";
 import Layout from "./components/Layout/Layout";
-import NewUser from "./components/RegisterForm/NewUser/NewUser";
-import SignIn from "./components/Header/SingIn/SignIn";
+import RegisterForm from "./components/RegisterForm/RegisterForm/RegisterForm";
+import SignIn from "./components/SingIn/SignIn";
+
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="/" element={<Navigate replace to="/login" />} />
-      <Route path="/login" element={<NewUser />} />
+      <Route path="/login" element={<SignIn />} />
+      <Route path="/register-form" element={<RegisterForm />} />
       <Route path="/categorias" element={<CategoryPage />}>
         <Route path="/categorias/electrodomesticos" element={<OfferPreview />} />
         <Route path="/categorias/muebles" />
