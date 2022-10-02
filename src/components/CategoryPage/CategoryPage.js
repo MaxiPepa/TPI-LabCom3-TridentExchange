@@ -21,7 +21,7 @@ const CategoryPage = () => {
       <Link to="patio" className="category-item">
         <h1>Patio</h1>
       </Link>
-      <Link to="juegueteria" className="category-item">
+      <Link to="jugueteria" className="category-item">
         <h1>Juguetería</h1>
       </Link>
       <Link to="materiales" className="category-item">
