@@ -9,6 +9,7 @@ import {
 import "./App.css";
 
 import CategoryPage from "./components/CategoryPage/CategoryPage";
+import OfferPreview from "./components/OfferPreview/OfferPreview";
 import Layout from "./components/Layout/Layout";
 import NewUser from "./components/RegisterForm/NewUser/NewUser";
 
@@ -18,7 +19,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Navigate replace to="/login" />} />
       <Route path="/login" element={<NewUser />} />
       <Route path="/categorias" element={<CategoryPage />}>
-        <Route path="/categorias/electrodomesticos" />
+        <Route path="/categorias/electrodomesticos" element={<OfferPreview />} />
         <Route path="/categorias/muebles" />
         <Route path="/categorias/cocina" />
         <Route path="/categorias/electronica" />
