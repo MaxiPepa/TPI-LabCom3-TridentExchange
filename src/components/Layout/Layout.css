@@ -1,9 +1,12 @@
-#divBody{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    position: absolute;
-    background-image: linear-gradient(#e4f4f4, #7e9c9c);
+#divBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  background-image: linear-gradient(#e4f4f4, #7e9c9c);
+}
+
+main{
+    min-height: 100vh;
 }
