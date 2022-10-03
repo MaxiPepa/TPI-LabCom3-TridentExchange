@@ -6,9 +6,9 @@ const SignIn = () => {
     <>
       <h1>Iniciar Sesión</h1>
       <div className="sign-in">
-        <label for="user">Usuario:</label>
+        <label htmlFor="user">Usuario:</label>
         <input type="text" id="user" />
-        <label for="password">Contraseña:</label>
+        <label htmlFor="password">Contraseña:</label>
         <input type="password" id="password" />
         <div className="button_sign-in">
           <button type="button">Iniciar Sesión</button>
