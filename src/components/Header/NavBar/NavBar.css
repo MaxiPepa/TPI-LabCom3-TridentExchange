@@ -1,7 +1,4 @@
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
     width: 100%;
     background-image: linear-gradient(#19cccc, #228d8d);
     border-bottom-right-radius: 30px;

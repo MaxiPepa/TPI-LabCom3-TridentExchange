@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 
-import "./Layout.css"
+import "./Layout.css";
 
 import Footer from "../Footer/Footer";
 import NavBar from "../Header/NavBar/NavBar";
 
 const Layout = () => {
   return (
-    <div className="main-content">
+    <div id="divBody">
       <NavBar />
       <main>
         <Outlet />

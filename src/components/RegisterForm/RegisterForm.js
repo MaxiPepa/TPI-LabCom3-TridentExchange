@@ -1,5 +1,4 @@
 import { useFirebaseApp } from "reactfire";
-
 import "./RegisterForm.css";
 
 const RegisterForm = () => {

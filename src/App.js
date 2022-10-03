@@ -11,7 +11,7 @@ import "./App.css";
 import CategoryPage from "./components/CategoryPage/CategoryPage";
 import OfferPreview from "./components/OfferPreview/OfferPreview";
 import Layout from "./components/Layout/Layout";
-import RegisterForm from "./components/RegisterForm/RegisterForm/RegisterForm";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
 import SignIn from "./components/SingIn/SignIn";
 
 
