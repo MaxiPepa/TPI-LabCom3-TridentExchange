@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./RegisterForm.css";
 
+import { useState } from "react";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+
 const RegisterForm = () => {
   const [enteredUser, setEnteredUser] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
@@ -59,7 +62,7 @@ const RegisterForm = () => {
 
   return (
     <>
-      <h1>Formulario de registración</h1>
+      <h1>Formulario de registro:</h1>
       <form className="register-form">
         <label htmlFor="user">Email:</label>
         <input
