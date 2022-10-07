@@ -6,8 +6,6 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-
-
 import "./App.css";
 
 import CategoryPage from "./components/CategoryPage/CategoryPage";
