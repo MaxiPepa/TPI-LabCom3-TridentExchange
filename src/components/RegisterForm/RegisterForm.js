@@ -13,7 +13,7 @@ const RegisterForm = () => {
     <>
       <h1>Formulario de registración</h1>
       <form className="register-form">
-        <label htmlFor="user">Nombre de usuario:</label>
+        <label htmlFor="user">Email:</label>
         <input type="text" id="user"></input>
         <label htmlFor="password">Contraseña:</label>
         <input type="password" id="password"></input>
