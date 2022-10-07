@@ -29,3 +29,8 @@
     font-weight: 700;
 }
 
+.error{
+    color: red;
+    font-size: 14px;
+}
+
