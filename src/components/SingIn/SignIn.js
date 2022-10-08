@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../Contexts/AuthContext";
 
 import "./SignIn.css";
 
@@ -8,6 +9,7 @@ const SignIn = () => {
   const [enteredUser, setEnteredUser] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const { login } = useAuth();
 
   const onUserInputBlur = (event) => {
     if (enteredUser === "") {
@@ -39,6 +41,11 @@ const SignIn = () => {
     }
   };
 
+  const validateEmail = (email) => {
+    const re = /\S+@\S+.\S+/;
+    return re.test(email);
+  };
+
   const changeUserHandler = (event) => {
     setEnteredUser(event.target.value);
   };
@@ -47,11 +54,19 @@ const SignIn = () => {
     setEnteredPassword(event.target.value);
   };
 
-  function validateEmail(email) {
-    const re = /\S+@\S+.\S+/;
-    return re.test(email);
-  }
-  
+  const loginButtonHandler = () => {
+    if (
+      enteredUser === "" ||
+      enteredPassword === "" ||
+      Object.keys(errors).length !== 0
+    ) {
+      alert("Hay errores en los campos");
+    } else {
+      login(enteredUser, enteredPassword);
+    }
+  };
+
+
   return (
     <>
       <h1>Iniciar Sesión</h1>
@@ -73,7 +88,7 @@ const SignIn = () => {
         />
         {errors.password && <div className="error">{errors.password}</div>}
         <div className="button_sign-in">
-          <button type="button">Iniciar Sesión</button>
+          <button type="button" onClick={loginButtonHandler}>Iniciar Sesión</button>
           <NavLink to="/register-form">Registrarse</NavLink>
         </div>
       </div>

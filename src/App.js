@@ -6,8 +6,6 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 
-
-
 import "./App.css";
 
 import CategoryPage from "./components/CategoryPage/CategoryPage";
@@ -15,8 +13,7 @@ import OfferPreview from "./components/OfferPreview/OfferPreview";
 import Layout from "./components/Layout/Layout";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import SignIn from "./components/SingIn/SignIn";
-
-
+import { AuthProvider } from "./components/Contexts/AuthContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +22,10 @@ const router = createBrowserRouter(
       <Route path="/login" element={<SignIn />} />
       <Route path="/register-form" element={<RegisterForm />} />
       <Route path="/categorias" element={<CategoryPage />}>
-        <Route path="/categorias/electrodomesticos" element={<OfferPreview />} />
+        <Route
+          path="/categorias/electrodomesticos"
+          element={<OfferPreview />}
+        />
         <Route path="/categorias/muebles" />
         <Route path="/categorias/cocina" />
         <Route path="/categorias/electronica" />
@@ -38,7 +38,11 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 };
 
 export default App;

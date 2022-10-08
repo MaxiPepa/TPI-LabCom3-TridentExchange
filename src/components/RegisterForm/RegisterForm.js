@@ -1,10 +1,13 @@
-import { useState } from "react";
 import "./RegisterForm.css";
+
+import { useState } from "react";
+import { useAuth } from "../Contexts/AuthContext";
 
 const RegisterForm = () => {
   const [enteredUser, setEnteredUser] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const { register } = useAuth();
 
   const onUserInputBlur = (event) => {
     if (enteredUser === "") {
@@ -36,6 +39,11 @@ const RegisterForm = () => {
     }
   };
 
+  const validateEmail = (email) => {
+    const re = /\S+@\S+.\S+/;
+    return re.test(email);
+  };
+
   const changeUserHandler = (event) => {
     setEnteredUser(event.target.value);
   };
@@ -44,22 +52,21 @@ const RegisterForm = () => {
     setEnteredPassword(event.target.value);
   };
 
-  function validateEmail(email) {
-    const re = /\S+@\S+.\S+/;
-    return re.test(email);
-  }
-
-  const button = () => {
-   if (enteredUser === '' || enteredPassword === '' || Object.keys(errors).length !== 0){
-    alert("Hay errores en los campos")
-   }else{
-    console.log("no errores")
-   }
+  const registerButtonHandler = () => {
+    if (
+      enteredUser === "" ||
+      enteredPassword === "" ||
+      Object.keys(errors).length !== 0
+    ) {
+      alert("Hay errores en los campos");
+    } else {
+      register(enteredUser, enteredPassword);
+    }
   };
 
   return (
     <>
-      <h1>Formulario de registración</h1>
+      <h1>Formulario de registro:</h1>
       <form className="register-form">
         <label htmlFor="user">Email:</label>
         <input
@@ -77,9 +84,7 @@ const RegisterForm = () => {
           onBlur={onPasswordInputBlur}
         ></input>
         {errors.password && <div className="error">{errors.password}</div>}
-        <label htmlFor="repeat-password">Repetir contraseña:</label>
-        <input type="password" id="repeat-password"></input>
-        <button type="button" onClick={button}>
+        <button type="button" onClick={registerButtonHandler}>
           Registrarse
         </button>
       </form>
