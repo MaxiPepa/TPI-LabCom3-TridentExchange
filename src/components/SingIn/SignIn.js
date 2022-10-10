@@ -13,7 +13,7 @@ const SignIn = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
-  const onUserInputBlur = (event) => {
+  const onUserInputBlur = () => {
     if (enteredUser === "") {
       setErrors({ ...errors, user: "Campo obligatorio." });
     } else if (!validateEmail(enteredUser)) {
@@ -28,7 +28,7 @@ const SignIn = () => {
     }
   };
 
-  const onPasswordInputBlur = (event) => {
+  const onPasswordInputBlur = () => {
     if (enteredPassword === "") {
       setErrors({ ...errors, password: "Campo obligatorio." });
     } else if (enteredPassword.length < 6) {
