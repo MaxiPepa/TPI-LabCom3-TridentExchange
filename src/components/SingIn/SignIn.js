@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
 
@@ -10,6 +10,7 @@ const SignIn = () => {
   const [enteredUser, setEnteredUser] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
   const { login } = useAuth();
 
   const onUserInputBlur = (event) => {
@@ -69,6 +70,7 @@ const SignIn = () => {
     } else {
       try {
         await login(enteredUser, enteredPassword);
+        navigate("/categorias");
       } catch (error) {
         switch (error.code) {
           case "auth/user-not-found":
