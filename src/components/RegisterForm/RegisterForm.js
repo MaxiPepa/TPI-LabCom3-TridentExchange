@@ -1,16 +1,24 @@
 import "./RegisterForm.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../Contexts/AuthContext";
-import Swal from "sweetalert2"
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
   const [enteredUser, setEnteredUser] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const { register } = useAuth();
+  const navigate = useNavigate();
+  const { register, userInfo } = useAuth();
 
-  const onUserInputBlur = (event) => {
+  useEffect(() => {
+    if (userInfo != null) {
+      navigate("/categorias");
+    }
+  }, [userInfo, navigate]);
+
+  const onUserInputBlur = () => {
     if (enteredUser === "") {
       setErrors({ ...errors, user: "Campo obligatorio." });
     } else if (!validateEmail(enteredUser)) {
@@ -25,7 +33,7 @@ const RegisterForm = () => {
     }
   };
 
-  const onPasswordInputBlur = (event) => {
+  const onPasswordInputBlur = () => {
     if (enteredPassword === "") {
       setErrors({ ...errors, password: "Campo obligatorio." });
     } else if (enteredPassword.length < 6) {
@@ -66,6 +74,7 @@ const RegisterForm = () => {
       });
     } else {
       await register(enteredUser, enteredPassword);
+      navigate("/categorias");
     }
   };
 

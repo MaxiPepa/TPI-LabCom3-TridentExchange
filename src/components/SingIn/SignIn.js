@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
 
@@ -10,9 +10,16 @@ const SignIn = () => {
   const [enteredUser, setEnteredUser] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const { login } = useAuth();
+  const navigate = useNavigate();
+  const { login, userInfo } = useAuth();
 
-  const onUserInputBlur = (event) => {
+  useEffect(() => {
+    if (userInfo != null) {
+      navigate("/categorias");
+    }
+  }, [userInfo, navigate]);
+
+  const onUserInputBlur = () => {
     if (enteredUser === "") {
       setErrors({ ...errors, user: "Campo obligatorio." });
     } else if (!validateEmail(enteredUser)) {
@@ -27,7 +34,7 @@ const SignIn = () => {
     }
   };
 
-  const onPasswordInputBlur = (event) => {
+  const onPasswordInputBlur = () => {
     if (enteredPassword === "") {
       setErrors({ ...errors, password: "Campo obligatorio." });
     } else if (enteredPassword.length < 6) {

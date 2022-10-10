@@ -1,8 +1,19 @@
-import { Link, Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { useAuth } from "../Contexts/AuthContext";
 
 import "./CategoryPage.css";
 
 const CategoryPage = () => {
+  const navigate = useNavigate();
+  const { userInfo } = useAuth();
+
+  useEffect(() => {
+    if (userInfo === null) {
+      navigate("/");
+    }
+  }, [userInfo, navigate]);
+
   return (
     <>
       <div className="category-container">
