@@ -13,8 +13,9 @@ import OfferPreview from "./components/OfferPreview/OfferPreview";
 import Layout from "./components/Layout/Layout";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import SignIn from "./components/SingIn/SignIn";
-import { AuthProvider } from "./components/Contexts/AuthContext";
 import Configuration from "./components/Configuration/Configuration";
+import { AuthProvider } from "./components/Contexts/AuthContext";
+import { DatabaseProvider } from "./components/Contexts/DatabaseContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,7 +43,9 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <AuthProvider>
-      <RouterProvider router={router} />
+      <DatabaseProvider>
+        <RouterProvider router={router} />
+      </DatabaseProvider>
     </AuthProvider>
   );
 };
