@@ -14,6 +14,7 @@ import Layout from "./components/Layout/Layout";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import SignIn from "./components/SingIn/SignIn";
 import { AuthProvider } from "./components/Contexts/AuthContext";
+import { DatabaseProvider } from "./components/Contexts/DatabaseContext";
 import Configuration from "./components/Configuration/Configuration";
 
 const router = createBrowserRouter(
@@ -42,7 +43,9 @@ const router = createBrowserRouter(
 const App = () => {
   return (
     <AuthProvider>
-      <RouterProvider router={router} />
+      <DatabaseProvider>
+        <RouterProvider router={router} />
+      </DatabaseProvider>
     </AuthProvider>
   );
 };
