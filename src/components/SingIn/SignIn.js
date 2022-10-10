@@ -54,7 +54,7 @@ const SignIn = () => {
     setEnteredPassword(event.target.value);
   };
 
-  const loginButtonHandler = () => {
+  const loginButtonHandler = async () => {
     if (
       enteredUser === "" ||
       enteredPassword === "" ||
@@ -62,10 +62,23 @@ const SignIn = () => {
     ) {
       alert("Hay errores en los campos");
     } else {
-      login(enteredUser, enteredPassword);
+      try {
+        await login(enteredUser, enteredPassword);
+      } catch (error) {
+        switch (error.code) {
+          case "auth/user-not-found":
+            alert("El email ingresado no está conectado a ninguna cuenta");
+            break;
+          case "auth/wrong-password":
+            alert("La contraseña es incorrecta");
+            break;
+          default:
+            alert("Ha ocurrido un error en el inicio de sesión");
+            break;
+        }
+      }
     }
   };
-
 
   return (
     <>
@@ -88,7 +101,9 @@ const SignIn = () => {
         />
         {errors.password && <div className="error">{errors.password}</div>}
         <div className="button_sign-in">
-          <button type="button" onClick={loginButtonHandler}>Iniciar Sesión</button>
+          <button type="button" onClick={loginButtonHandler}>
+            Iniciar Sesión
+          </button>
           <NavLink to="/register-form">Registrarse</NavLink>
         </div>
       </div>

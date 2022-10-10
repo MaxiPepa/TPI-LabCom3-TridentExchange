@@ -52,7 +52,7 @@ const RegisterForm = () => {
     setEnteredPassword(event.target.value);
   };
 
-  const registerButtonHandler = () => {
+  const registerButtonHandler = async () => {
     if (
       enteredUser === "" ||
       enteredPassword === "" ||
@@ -60,7 +60,7 @@ const RegisterForm = () => {
     ) {
       alert("Hay errores en los campos");
     } else {
-      register(enteredUser, enteredPassword);
+      await register(enteredUser, enteredPassword);
     }
   };
 

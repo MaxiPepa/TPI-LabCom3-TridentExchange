@@ -19,12 +19,12 @@ export const AuthProvider = ({ children }) => {
   const auth = getAuth();
   const [userInfo, setUserInfo] = useState(null);
 
-  const register = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+  const register = async (email, password) => {
+    await createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const login = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
   const logout = () => {
