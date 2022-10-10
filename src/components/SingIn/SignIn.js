@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
+import Swal from "sweetalert2";
 
 import "./SignIn.css";
 
@@ -60,20 +61,36 @@ const SignIn = () => {
       enteredPassword === "" ||
       Object.keys(errors).length !== 0
     ) {
-      alert("Hay errores en los campos");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Hay errores en los campos.",
+      });
     } else {
       try {
         await login(enteredUser, enteredPassword);
       } catch (error) {
         switch (error.code) {
           case "auth/user-not-found":
-            alert("El email ingresado no está conectado a ninguna cuenta");
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "El email ingresado no esta vinculado a ninguna cuenta.",
+            });
             break;
           case "auth/wrong-password":
-            alert("La contraseña es incorrecta");
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "La contraseña ingresada no es correcta.",
+            });
             break;
           default:
-            alert("Ha ocurrido un error en el inicio de sesión");
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "Ha ocurrido un error inesperado con el inicio de sesión.",
+            });
             break;
         }
       }

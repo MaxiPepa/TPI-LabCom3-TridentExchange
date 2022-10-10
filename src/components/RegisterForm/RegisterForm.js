@@ -2,6 +2,7 @@ import "./RegisterForm.css";
 
 import { useState } from "react";
 import { useAuth } from "../Contexts/AuthContext";
+import Swal from "sweetalert2"
 
 const RegisterForm = () => {
   const [enteredUser, setEnteredUser] = useState("");
@@ -58,7 +59,11 @@ const RegisterForm = () => {
       enteredPassword === "" ||
       Object.keys(errors).length !== 0
     ) {
-      alert("Hay errores en los campos");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Hay errores en los campos.",
+      });
     } else {
       await register(enteredUser, enteredPassword);
     }
