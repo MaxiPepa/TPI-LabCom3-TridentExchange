@@ -2,6 +2,8 @@ import "./NavBar.css";
 
 import { useAuth } from "../../Contexts/AuthContext";
 
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
   const { userInfo, logout } = useAuth();
 
@@ -12,15 +14,23 @@ const NavBar = () => {
   return (
     <header>
       <nav>
-        <img src="/img/trident-exchange-logo.png" alt="Trident Exchange Logo" />
-
+        <section>
+          <NavLink to="./categorias">
+            <img
+              src="/img/trident-exchange-logo.png"
+              alt="Trident Exchange Logo"
+            />
+          </NavLink>
+        </section>
         {userInfo != null && (
           <div className="singed-in-user">
-            <p>Bienvenido, {userInfo.email}</p>
-            <button type="button">Configuración</button>
-            <button type="button" onClick={logOutButtonHandler}>
-              Desconectarse
-            </button>
+            <p>BIENVENIDO {userInfo.email}</p>
+            <section className="button-singed-in-user">
+              <NavLink to="/configuracion">Configuración</NavLink>
+              <button type="button" onClick={logOutButtonHandler}>
+                Desconectarse
+              </button>
+            </section>
           </div>
         )}
       </nav>

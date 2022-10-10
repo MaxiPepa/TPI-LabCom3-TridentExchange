@@ -14,6 +14,7 @@ import Layout from "./components/Layout/Layout";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import SignIn from "./components/SingIn/SignIn";
 import { AuthProvider } from "./components/Contexts/AuthContext";
+import Configuration from "./components/Configuration/Configuration";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
         <Route path="/categorias/jugueteria" />
         <Route path="/categorias/materiales" />
       </Route>
+      <Route path="/configuracion" element={<Configuration/>}/>
     </Route>
   )
 );
