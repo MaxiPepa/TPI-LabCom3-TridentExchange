@@ -1,8 +1,8 @@
 import "./RegisterForm.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../Contexts/AuthContext";
-import Swal from "sweetalert2"
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
@@ -10,7 +10,13 @@ const RegisterForm = () => {
   const [enteredPassword, setEnteredPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-  const { register } = useAuth();
+  const { register, userInfo } = useAuth();
+
+  useEffect(() => {
+    if (userInfo != null) {
+      navigate("/categorias");
+    }
+  }, [userInfo, navigate]);
 
   const onUserInputBlur = () => {
     if (enteredUser === "") {
@@ -68,7 +74,7 @@ const RegisterForm = () => {
       });
     } else {
       await register(enteredUser, enteredPassword);
-      navigate("/categorias")
+      navigate("/categorias");
     }
   };
 

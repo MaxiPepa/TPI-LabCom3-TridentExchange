@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
@@ -11,7 +11,13 @@ const SignIn = () => {
   const [enteredPassword, setEnteredPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, userInfo } = useAuth();
+
+  useEffect(() => {
+    if (userInfo != null) {
+      navigate("/categorias");
+    }
+  }, [userInfo, navigate]);
 
   const onUserInputBlur = () => {
     if (enteredUser === "") {
@@ -70,7 +76,6 @@ const SignIn = () => {
     } else {
       try {
         await login(enteredUser, enteredPassword);
-        navigate("/categorias");
       } catch (error) {
         switch (error.code) {
           case "auth/user-not-found":
