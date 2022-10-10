@@ -2,6 +2,8 @@ import "./NavBar.css";
 
 import { useAuth } from "../../Contexts/AuthContext";
 
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
   const { userInfo, logout } = useAuth();
 
@@ -17,10 +19,12 @@ const NavBar = () => {
         {userInfo != null && (
           <div className="singed-in-user">
             <p>Bienvenido, {userInfo.email}</p>
-            <button type="button">Configuración</button>
-            <button type="button" onClick={logOutButtonHandler}>
-              Desconectarse
-            </button>
+            <section className="button-singed-in-user">
+              <NavLink to="/configuracion">Configuración</NavLink>
+              <button type="button" onClick={logOutButtonHandler}>
+                Desconectarse
+              </button>
+            </section>
           </div>
         )}
       </nav>
