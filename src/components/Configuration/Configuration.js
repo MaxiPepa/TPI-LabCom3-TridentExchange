@@ -1,9 +1,20 @@
-import "./Configuration.css"
+import "./Configuration.css";
+
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Contexts/AuthContext";
+import { useEffect } from "react";
 
 const Configuration = () => {
-  return (
-    <div>Configuration</div>
-  )
-}
+  const navigate = useNavigate();
+  const { userInfo } = useAuth();
 
-export default Configuration
+  useEffect(() => {
+    if (userInfo === null) {
+      navigate("/");
+    }
+  }, [userInfo, navigate]);
+
+  return <div>Configuration</div>;
+};
+
+export default Configuration;
