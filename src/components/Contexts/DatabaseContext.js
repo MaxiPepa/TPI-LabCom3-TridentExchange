@@ -1,4 +1,4 @@
-import { child, get, getDatabase, ref, set } from "firebase/database";
+import { child, get, getDatabase, ref, remove, set } from "firebase/database";
 import { createContext, useContext } from "react";
 
 export const DatabaseContext = createContext();
@@ -34,8 +34,12 @@ export const DatabaseProvider = ({ children }) => {
     });
   };
 
+  const removeData = async (uid, offerID) => {
+    remove(ref(db, "offers/" + uid + offerID));
+  };
+
   return (
-    <DatabaseContext.Provider value={{ insertData, selectData }}>
+    <DatabaseContext.Provider value={{ insertData, selectData, removeData }}>
       {children}
     </DatabaseContext.Provider>
   );
