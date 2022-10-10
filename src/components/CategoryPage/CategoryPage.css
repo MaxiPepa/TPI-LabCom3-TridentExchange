@@ -1,6 +1,6 @@
 .category-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .category-item {
@@ -29,3 +29,5 @@
     color: black;
     font-weight: 700;
 }
+
+
