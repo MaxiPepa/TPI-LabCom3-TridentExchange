@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 
 import "./CategoryPage.css";
@@ -53,6 +53,7 @@ const CategoryPage = () => {
           </Link>
         </section>
       </div>
+      <NavLink to="/new-offer" className="new-offer-bubble">+ Nueva oferta</NavLink>
       <Outlet />
     </>
   );

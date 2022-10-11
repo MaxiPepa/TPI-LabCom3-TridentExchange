@@ -8,14 +8,15 @@ import {
 
 import "./App.css";
 
+import { AuthProvider } from "./components/Contexts/AuthContext";
+import { DatabaseProvider } from "./components/Contexts/DatabaseContext";
 import CategoryPage from "./components/CategoryPage/CategoryPage";
 import OfferPreview from "./components/OfferPreview/OfferPreview";
 import Layout from "./components/Layout/Layout";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import SignIn from "./components/SingIn/SignIn";
+import NewOffer from "./components/NewOffer/NewOffer";
 import Configuration from "./components/Configuration/Configuration";
-import { AuthProvider } from "./components/Contexts/AuthContext";
-import { DatabaseProvider } from "./components/Contexts/DatabaseContext";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,7 +36,8 @@ const router = createBrowserRouter(
         <Route path="/categorias/jugueteria" />
         <Route path="/categorias/materiales" />
       </Route>
-      <Route path="/configuracion" element={<Configuration/>}/>
+      <Route path="/configuracion" element={<Configuration />}/>
+      <Route path="/new-offer" element={<NewOffer />}/>
     </Route>
   )
 );
