@@ -17,7 +17,6 @@ import RegisterForm from "./components/RegisterForm/RegisterForm";
 import SignIn from "./components/SingIn/SignIn";
 import NewOffer from "./components/NewOffer/NewOffer";
 import Configuration from "./components/Configuration/Configuration";
-import NewOffer from "./components/NewOffer/NewOffer";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
