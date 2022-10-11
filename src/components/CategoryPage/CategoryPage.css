@@ -1,33 +1,37 @@
 .category-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .category-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    margin: 10px;
-    border: 3px solid black;
-    border-radius: 20px;
-}
-
-.category-item {
-    background-color:#093030;
-    border-radius: 20px;
-    font-size: 16px;
-    color: white;
-    padding: 10px;
-    border: none; 
-    cursor: pointer;
+    min-height: 300px;
+    min-width: 300px;
+    border-radius: 15px;
+    background-size: cover;
+	background-position: center center;
+    box-shadow: 1px 1px 10px #093030;
     text-decoration: none;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.category-container h1{
+    background-color: rgba(255, 255, 255, 0.705);
+    color: #093030;
+    text-transform: uppercase;
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
 }
 
 .category-item:hover{
-    background-color: #228d8d;
-    color: black;
-    font-weight: 700;
+    box-shadow: 1px 1px 20px black;
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .new-offer-bubble {
@@ -51,3 +55,29 @@
     color: black;
     background: #228d8d;
 }
+
+#furnitures{
+    background-image: url('../../../public/img/furnitures.jpg');
+}
+
+#garden{
+    background-image: url('../../../public/img/garden.jpg');
+}
+
+#toyStore{
+    background-image: url('../../../public/img/toyStory.jpg');
+}
+
+#realState{
+    background-image: url('../../../public/img/realState.jpg');
+}
+
+#vehicles{
+    background-image: url('../../../public/img/vehicles.jpg');
+}
+
+#appliance{
+    background-image: url('../../../public/img/appliance.jpg');
+    background-position: 23%;
+}
+
