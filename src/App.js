@@ -30,11 +30,10 @@ const router = createBrowserRouter(
           element={<OfferPreview />}
         />
         <Route path="/categorias/muebles" />
-        <Route path="/categorias/cocina" />
-        <Route path="/categorias/electronica" />
-        <Route path="/categorias/patio" />
+        <Route path="/categorias/vehiculos" />
+        <Route path="/categorias/inmuebles" />
+        <Route path="/categorias/jardineria" />
         <Route path="/categorias/jugueteria" />
-        <Route path="/categorias/materiales" />
       </Route>
       <Route path="/configuracion" element={<Configuration />}/>
       <Route path="/new-offer" element={<NewOffer />}/>

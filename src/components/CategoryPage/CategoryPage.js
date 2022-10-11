@@ -17,43 +17,28 @@ const CategoryPage = () => {
   return (
     <>
       <div className="category-container">
-        <section>
-          <Link to="electrodomesticos" className="category-item">
-            <h1>Electrodomésticos</h1>
-          </Link>
-        </section>
-        <section>
-          <Link to="muebles" className="category-item">
-            <h1>Muebles</h1>
-          </Link>
-        </section>
-        <section>
-          <Link to="cocina" className="category-item">
-            <h1>Cocina</h1>
-          </Link>
-        </section>
-        <section>
-          <Link to="electronica" className="category-item">
-            <h1>Electrónica</h1>
-          </Link>
-        </section>
-        <section>
-          <Link to="patio" className="category-item">
-            <h1>Patio</h1>
-          </Link>
-        </section>
-        <section>
-          <Link to="jugueteria" className="category-item">
-            <h1>Juguetería</h1>
-          </Link>
-        </section>
-        <section>
-          <Link to="materiales" className="category-item">
-            <h1>Materiales</h1>
-          </Link>
-        </section>
+        <Link to="electrodomesticos" className="category-item" id="appliance">
+          <h1>Electrodomésticos</h1>
+        </Link>
+        <Link to="muebles" className="category-item" id="furnitures">
+          <h1>Muebles</h1>
+        </Link>
+        <Link to="vehiculos" className="category-item" id="vehicles">
+          <h1>Vehículos</h1>
+        </Link>
+        <Link to="inmuebles" className="category-item" id="realState">
+          <h1>Inmuebles</h1>
+        </Link>
+        <Link to="jardineria" className="category-item" id="garden">
+          <h1>Jardineria</h1>
+        </Link>
+        <Link to="jugueteria" className="category-item" id="toyStore">
+          <h1>Juguetería</h1>
+        </Link>
       </div>
-      <NavLink to="/new-offer" className="new-offer-bubble">+ Nueva oferta</NavLink>
+      <NavLink to="/new-offer" className="new-offer-bubble">
+        + Nueva oferta
+      </NavLink>
       <Outlet />
     </>
   );
