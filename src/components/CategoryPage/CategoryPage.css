@@ -30,4 +30,24 @@
     font-weight: 700;
 }
 
+.new-offer-bubble {
+    position: fixed;
+    text-decoration: none;
+    width: 300px;
+    height: 55px;
+    bottom: 15px;
+    right: 15px;
+    background: #093030;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
 
+.new-offer-bubble:hover {
+    text-decoration: none;
+    color: black;
+    background: #228d8d;
+}
