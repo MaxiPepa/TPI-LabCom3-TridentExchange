@@ -20,7 +20,7 @@ const CategoryPage = () => {
         <Link to="electrodomesticos" className="category-item" id="appliance">
           <h1>Electrodomésticos</h1>
         </Link>
-        <Link to="muebles" className="category-item" id="furnitures">
+        <Link to="muebles" className="category-item" id="furniture">
           <h1>Muebles</h1>
         </Link>
         <Link to="vehiculos" className="category-item" id="vehicles">

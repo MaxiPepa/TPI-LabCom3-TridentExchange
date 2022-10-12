@@ -26,6 +26,15 @@ const NewOffer = () => {
       <input id="item" type="text" />
       <label htmlFor="contact">Número o Email de contacto:</label>
       <input id="contact" type="text" />
+      <label htmlFor="category">Categoría:</label>
+      <select id="category">
+        <option value="appliance">Electrodomesticos</option>
+        <option value="furniture">Muebles</option>
+        <option value="vehicles">Vehículos</option>
+        <option value="realState">Inmuebles</option>
+        <option value="garden">Jardinería</option>
+        <option value="toyStore">Juguetería</option>
+      </select>
       <button type="button">Ingresar oferta</button>
     </form>
   );
