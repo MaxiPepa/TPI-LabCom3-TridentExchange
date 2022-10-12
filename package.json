@@ -1,6 +1,5 @@
 {
   "name": "tpi-labcom3-tridentexchange",
-  "homepage": "https://maxipepa.github.io/TPI-LabCom3-TridentExchange",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
