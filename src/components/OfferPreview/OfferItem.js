@@ -2,6 +2,7 @@ import "./OfferItem.css";
 
 import { useAuth } from "../Contexts/AuthContext";
 import { useDatabase } from "../Contexts/DatabaseContext";
+import Swal from "sweetalert2";
 
 const OfferItem = ({ offerList }) => {
   const { userInfo } = useAuth();
@@ -9,9 +10,29 @@ const OfferItem = ({ offerList }) => {
 
   const deleteOfferHandler = async (category, offerId, offerUID, actualUID) => {
     if (offerUID === actualUID) {
-      await removeData(category, offerId);
+      Swal.fire({
+        title: "¿Estás seguro que quieres borrar la publicación?",
+        showDenyButton: true,
+        confirmButtonText: "Sí",
+        denyButtonText: `No`,
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          await removeData(category, offerId);
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Publicación borrada con éxito",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
     } else {
-      alert("No puedes borrar una publicacion que no es tuya");
+      Swal.fire({
+        icon: "error",
+        title: "Eliminado denegado",
+        text: "¡No puedes eliminar una publicación que no es tuya!",
+      });
     }
   };
 
