@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import { useDatabase } from "../Contexts/DatabaseContext";
+import Swal from "sweetalert2";
 
 const NewOffer = () => {
   const [title, setTitle] = useState("");
@@ -58,6 +59,20 @@ const NewOffer = () => {
     };
 
     await insertData(category, offerId, offerData);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Oferta publicada con éxito",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+    setTitle("");
+    setDescription("");
+    setPhotoLink("");
+    setPreference("");
+    setContact("");
+    setCategory("appliance");
   };
 
   return (

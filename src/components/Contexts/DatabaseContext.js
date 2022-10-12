@@ -14,6 +14,8 @@ export const DatabaseProvider = ({ children }) => {
 
   const insertData = async (category, offerID, offerData) => {
     await set(ref(db, category + "/" + offerID), {
+      id: offerID,
+      category: category,
       photoLink: offerData.photoLink,
       title: offerData.title,
       description: offerData.description,
@@ -36,8 +38,8 @@ export const DatabaseProvider = ({ children }) => {
     return values;
   };
 
-  const removeData = async (uid, offerID) => {
-    remove(ref(db, "offers/" + uid + offerID));
+  const removeData = async (category, offerID) => {
+    remove(ref(db, category + "/" + offerID));
   };
 
   return (
