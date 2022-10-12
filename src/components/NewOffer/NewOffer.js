@@ -3,6 +3,7 @@ import "./NewOffer.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
+import { useDatabase } from "../Contexts/DatabaseContext";
 
 const NewOffer = () => {
   const [title, setTitle] = useState("");
@@ -13,6 +14,7 @@ const NewOffer = () => {
   const [category, setCategory] = useState("appliance");
   const navigate = useNavigate();
   const { userInfo } = useAuth();
+  const { insertData } = useDatabase();
 
   useEffect(() => {
     if (userInfo === null) {
@@ -44,18 +46,57 @@ const NewOffer = () => {
     setCategory(event.target.value);
   };
 
+  const submitOfferHandler = async () => {
+    const offerId = Math.random().toString(36).slice(2, 18);
+    const offerData = {
+      photoLink: photoLink,
+      title: title,
+      description: description,
+      preferredItem: preference,
+      contact: contact,
+      userId: userInfo.uid,
+    };
+
+    await insertData(category, offerId, offerData);
+  };
+
   return (
     <form className="new-offer-form">
       <label htmlFor="title">Título:</label>
-      <input id="title" type="text" value={title} onChange={changeTitleHandler}/>
+      <input
+        id="title"
+        type="text"
+        value={title}
+        onChange={changeTitleHandler}
+      />
       <label htmlFor="description">Description:</label>
-      <textarea id="description" rows="15" value={description} onChange={changeDescriptionHandler}/>
+      <textarea
+        id="description"
+        rows="15"
+        value={description}
+        onChange={changeDescriptionHandler}
+      />
       <label htmlFor="photo">Link de la foto:</label>
-      <input id="photo" type="text" value={photoLink} onChange={changePhotoLinkHandler}/>
+      <input
+        id="photo"
+        type="text"
+        value={photoLink}
+        onChange={changePhotoLinkHandler}
+      />
       <label htmlFor="item">Item de preferencia:</label>
-      <input id="item" type="text" value={preference} onChange={changePreferenceHandler}/>
+      <input
+        id="item"
+        type="text"
+        value={preference}
+        onChange={changePreferenceHandler}
+      />
       <label htmlFor="contact">Número o Email de contacto:</label>
-      <input id="contact" type="text" value={contact} onChange={changeContactHandler}/>
+      <input
+        id="contact"
+        type="text"
+        value={contact}
+        onChange={changeContactHandler}
+      />
       <label htmlFor="category">Categoría:</label>
       <select id="category" value={category} onChange={changeCategoryHandler}>
         <option value="appliance">Electrodomesticos</option>
@@ -65,7 +106,9 @@ const NewOffer = () => {
         <option value="garden">Jardinería</option>
         <option value="toyStore">Juguetería</option>
       </select>
-      <button type="button">Ingresar oferta</button>
+      <button type="button" onClick={submitOfferHandler}>
+        Ingresar oferta
+      </button>
     </form>
   );
 };

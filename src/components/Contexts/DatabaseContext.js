@@ -12,22 +12,23 @@ export const useDatabase = () => {
 export const DatabaseProvider = ({ children }) => {
   const db = getDatabase();
 
-  const insertData = async (uid, offerID, offerData) => {
-    await set(ref(db, "offers/" + uid + "/" + offerID), {
+  const insertData = async (category, offerID, offerData) => {
+    await set(ref(db, category + "/" + offerID), {
       photoLink: offerData.photoLink,
       title: offerData.title,
       description: offerData.description,
       preferredItem: offerData.preferredItem,
-      email: offerData.email,
+      contact: offerData.contact,
+      userId: offerData.userId
     });
   };
 
-  const selectData = async () => {
+  const selectData = async (category) => {
     const dbRef = ref(db);
 
-    await get(child(dbRef, "offers/")).then((snapshot) => {
+    await get(child(dbRef, category + "/")).then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot);
+        console.log(Object.values(snapshot.val()));
       } else {
         console.log("No data");
       }
