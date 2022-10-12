@@ -19,20 +19,21 @@ export const DatabaseProvider = ({ children }) => {
       description: offerData.description,
       preferredItem: offerData.preferredItem,
       contact: offerData.contact,
-      userId: offerData.userId
+      userId: offerData.userId,
     });
   };
 
   const selectData = async (category) => {
     const dbRef = ref(db);
+    let values = null;
 
     await get(child(dbRef, category + "/")).then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(Object.values(snapshot.val()));
-      } else {
-        console.log("No data");
+        values = Object.values(snapshot.val());
       }
     });
+
+    return values;
   };
 
   const removeData = async (uid, offerID) => {
