@@ -27,16 +27,31 @@ const router = createBrowserRouter(
       <Route path="/categorias" element={<CategoryPage />}>
         <Route
           path="/categorias/electrodomesticos"
-          element={<OfferPreview />}
+          element={<OfferPreview category={"appliance"} />}
         />
-        <Route path="/categorias/muebles" />
-        <Route path="/categorias/vehiculos" />
-        <Route path="/categorias/inmuebles" />
-        <Route path="/categorias/jardineria" />
-        <Route path="/categorias/jugueteria" />
+        <Route
+          path="/categorias/muebles"
+          element={<OfferPreview category={"furniture"} />}
+        />
+        <Route
+          path="/categorias/vehiculos"
+          element={<OfferPreview category={"vehicles"} />}
+        />
+        <Route
+          path="/categorias/inmuebles"
+          element={<OfferPreview category={"realState"} />}
+        />
+        <Route
+          path="/categorias/jardineria"
+          element={<OfferPreview category={"garden"} />}
+        />
+        <Route
+          path="/categorias/jugueteria"
+          element={<OfferPreview category={"toyStore"} />}
+        />
       </Route>
-      <Route path="/configuracion" element={<Configuration />}/>
-      <Route path="/new-offer" element={<NewOffer />}/>
+      <Route path="/configuracion" element={<Configuration />} />
+      <Route path="/new-offer" element={<NewOffer />} />
     </Route>
   )
 );

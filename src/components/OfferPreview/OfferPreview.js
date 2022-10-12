@@ -1,14 +1,29 @@
-import "./OfferPreview.css"
+import { useEffect, useState } from "react";
+import { useDatabase } from "../Contexts/DatabaseContext";
+import OfferItem from "./OfferItem";
+import "./OfferPreview.css";
 
-const OfferPreview = () => {
-    return (
-        <div className="offer-card">
-            <img alt="Foto de la oferta" />
-            <h2>Título</h2>
-            <p>Descripción</p>
-            <button type="button">Ver más</button>
-        </div>
-    );
-}
+const OfferPreview = ({ category }) => {
+  const { selectData } = useDatabase();
+  const [offerList, setOfferList] = useState(null);
 
-export default OfferPreview
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await selectData(category);
+      setOfferList(data);
+    };
+    fetchData();
+  }, [category, selectData]);
+
+  return (
+    <>
+      {offerList === null ? (
+        <h2>No hay ofertas cargadas en esta categoría.</h2>
+      ) : (
+        <OfferItem offerList={offerList} />
+      )}
+    </>
+  );
+};
+
+export default OfferPreview;
