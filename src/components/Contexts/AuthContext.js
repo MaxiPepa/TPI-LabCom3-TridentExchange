@@ -43,7 +43,9 @@ export const AuthProvider = ({ children }) => {
   }
 
   const eliminateUser = async () => {
-    await deleteUser(auth.currentUser);
+    await deleteUser(auth.currentUser).then(() => {
+      setUserInfo(null);
+    });
   }
 
   return (
