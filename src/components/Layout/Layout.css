@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  background-image: linear-gradient(#e4f4f4, #7e9c9c);
+  background-image: linear-gradient(#e4f4f4, var(--c-menu-back));
 }
 
 main{

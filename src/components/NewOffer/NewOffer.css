@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: column;
     margin: 10%;
-    background-color: #a6d3d3;
+    background-color: var(--c-menu-back);
     padding: 20px;
     border-radius: 30px;
     font-weight: 700;
-    box-shadow: 10px 10px 30px #001d17;
+    box-shadow: 10px 10px 30px var(--c-black-box-shadow);
 }
 
 textarea {

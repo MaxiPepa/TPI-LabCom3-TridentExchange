@@ -11,7 +11,7 @@
     border-radius: 15px;
     background-size: cover;
 	background-position: center center;
-    box-shadow: 1px 1px 10px #093030;
+    box-shadow: 1px 1px 10px var(--c-black-box-shadow);
     text-decoration: none;
     transition: transform 0.2s ease;
     display: flex;
@@ -21,7 +21,7 @@
 
 .category-container h1{
     background-color: rgba(255, 255, 255, 0.705);
-    color: #093030;
+    color: var(--c-button-back);
     text-transform: uppercase;
     font-size: 22px;
     width: 100%;
@@ -29,7 +29,7 @@
 }
 
 .category-item:hover{
-    box-shadow: 1px 1px 20px black;
+    box-shadow: 1px 1px 20px var(--c-black-box-shadow);
     cursor: pointer;
     transform: scale(1.05);
 }
@@ -41,19 +41,19 @@
     height: 55px;
     bottom: 15px;
     right: 15px;
-    background: #093030;
+    background: var(--c-button-back);
     color: white;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 10px var(--c-black-box-shadow);
     z-index: 1;
 }
 
 .new-offer-bubble:hover {
     text-decoration: none;
     color: black;
-    background: #228d8d;
+    background: var(--c-button-hover);
 }
 
 #furniture{

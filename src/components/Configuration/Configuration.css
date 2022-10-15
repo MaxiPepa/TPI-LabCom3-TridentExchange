@@ -1,0 +1,108 @@
+.configuration-menu {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--c-menu-back);
+    padding: 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 10px 10px 30px var(--c-black-box-shadow);
+}
+
+.configuration-menu h2 {
+    margin: 5px;
+}
+
+.delete-user-button {
+    background-color: red;
+    border-radius: 20px;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    border: none; 
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.error{
+    color:red;
+    font-size: 14px;
+}
+
+.change-password{
+    background-color: var(--c-button-back);
+    border-radius: 20px;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    border: none; 
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.change-password:hover{
+    background-color: var(--c-button-hover);
+    color: black;
+    font-weight: 700;
+}
+
+.theme-switcher input {
+    display: none;
+}
+
+.theme-switcher {
+    position: relative;
+    background-color: var(--c-button-back);
+    border-radius: 10px;
+    display: flex;
+    padding: 0 3px;
+}
+
+.theme-switcher label {
+    position: relative;
+    z-index: 2;
+    width: calc(100% / 2);
+    color: white;
+}
+.theme-switcher label span {
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.theme-switcher label span:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.theme-switcher .slider {
+    position: absolute;
+    z-index: 1;
+    width: calc((100% - 6px) / 2);
+    top: 3px;
+    transform: translatex(-110%);
+    bottom: 3px;
+    border-radius: 8px;
+    transition: .30s ease, 0.25s ease-out;
+    background-color: var(--c-button-hover);
+}
+
+.theme-switcher input:nth-of-type(1):checked~.slider {
+    transform: translateX(0);
+}
+
+.theme-switcher input:nth-of-type(2):checked~.slider {
+    transform: translateX(100%);
+}
+
+.theme-switcher input:nth-of-type(3):checked~.slider {
+    transform: translateX(200%);
+}

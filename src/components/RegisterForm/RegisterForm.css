@@ -2,16 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: #a6d3d3;
+    background-color: var(--c-menu-back);
     padding: 20px;
     border-radius: 30px;
     font-weight: 700;
-    box-shadow: 10px 10px 30px #001d17;
+    box-shadow: 10px 10px 30px var(--c-black-box-shadow);
 }
 
 .register-form button{
     margin-top: 20px;
-    background-color:#093030;
+    background-color:var(--c-button-back);
     border-radius: 20px;
     font-size: 16px;
     color: white;
@@ -24,7 +24,7 @@
 }
 
 .register-form button:hover{
-    background-color: #228d8d;
+    background-color: var(--c-button-hover);
     color: black;
     font-weight: 700;
 }

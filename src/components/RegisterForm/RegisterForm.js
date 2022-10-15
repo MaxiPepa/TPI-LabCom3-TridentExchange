@@ -73,8 +73,16 @@ const RegisterForm = () => {
         text: "Hay errores en los campos.",
       });
     } else {
-      await register(enteredUser, enteredPassword);
-      navigate("/categorias");
+      try {
+        await register(enteredUser, enteredPassword);
+        navigate("/categorias");
+      } catch {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "El email ingresado ya está vinculado a una cuenta.",
+        });
+      }
     }
   };
 
