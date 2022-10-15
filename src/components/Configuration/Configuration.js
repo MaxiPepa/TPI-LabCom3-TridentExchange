@@ -10,7 +10,7 @@ const Configuration = () => {
   const [newPassword, setNewPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-  const { userInfo } = useAuth();
+  const { userInfo, changeAccountPassword } = useAuth();
 
   useEffect(() => {
     if (userInfo === null) {
@@ -41,7 +41,7 @@ const Configuration = () => {
     }
   };
 
-  const confirmButtonHandler = () => {
+  const confirmButtonHandler = async () => {
     if (newPassword === "" || Object.keys(errors).length !== 0) {
       Swal.fire({
         icon: "error",
@@ -49,7 +49,31 @@ const Configuration = () => {
         text: "Hay errores en los campos.",
       });
     } else {
-      console.log("cambia contra");
+      try {
+        Swal.fire({
+          title: "¿Estás seguro que quieres cambiar la contraseña?",
+          showDenyButton: true,
+          confirmButtonText: "Sí",
+          denyButtonText: `No`,
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            await changeAccountPassword(newPassword);
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Su contraseña ha sido cambiada correctamente",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      } catch {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Hubo un error inesperado en el cambio de contraseña",
+        });
+      }
     }
   };
 

@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const changeAccountPassword = async (newPassword) => {
-    await updatePassword(auth, newPassword);
+    await updatePassword(auth.currentUser, newPassword);
   }
 
   return (
