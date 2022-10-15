@@ -4,6 +4,7 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   signOut,
+  updatePassword,
 } from "firebase/auth";
 
 export const AuthContext = createContext();
@@ -36,8 +37,12 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
+  const changeAccountPassword = async (newPassword) => {
+    await updatePassword(auth, newPassword);
+  }
+
   return (
-    <AuthContext.Provider value={{ userInfo, register, login, logout }}>
+    <AuthContext.Provider value={{ userInfo, register, login, logout, changeAccountPassword }}>
       {children}
     </AuthContext.Provider>
   );
