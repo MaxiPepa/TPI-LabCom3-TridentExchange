@@ -37,17 +37,27 @@
 .new-offer-bubble {
     position: fixed;
     text-decoration: none;
-    width: 300px;
-    height: 55px;
+    width: auto;
+    height: auto;
+    padding: 10px;
     bottom: 15px;
     right: 15px;
     background: var(--c-button-back);
     color: white;
-    border-radius: 50px;
-    text-align: center;
+    border-radius: 100%;
     font-size: 30px;
     box-shadow: 0px 1px 10px var(--c-black-box-shadow);
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.new-offer-bubble p{
+    font-size: 12px;
+    margin: 0;
+    padding: 0 20px;
 }
 
 .new-offer-bubble:hover {

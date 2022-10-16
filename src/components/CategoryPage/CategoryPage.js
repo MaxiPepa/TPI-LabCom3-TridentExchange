@@ -37,7 +37,9 @@ const CategoryPage = () => {
         </Link>
       </div>
       <NavLink to="/new-offer" className="new-offer-bubble">
-        <i className="bi bi-plus-circle-dotted"> Nueva oferta</i>
+        <i className="bi bi-plus-circle-dotted"/>
+        <p>Nueva</p>
+        <p>Oferta</p>
       </NavLink>
       <Outlet />
     </>
