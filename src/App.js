@@ -10,6 +10,7 @@ import "./App.css";
 
 import { AuthProvider } from "./components/Contexts/AuthContext";
 import { DatabaseProvider } from "./components/Contexts/DatabaseContext";
+import { ThemeProvider } from "./components/Contexts/ThemeContext";
 import CategoryPage from "./components/CategoryPage/CategoryPage";
 import OfferPreview from "./components/OfferPreview/OfferPreview";
 import Layout from "./components/Layout/Layout";
@@ -60,7 +61,9 @@ const App = () => {
   return (
     <AuthProvider>
       <DatabaseProvider>
-        <RouterProvider router={router} />
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </DatabaseProvider>
     </AuthProvider>
   );

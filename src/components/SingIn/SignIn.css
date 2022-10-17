@@ -42,6 +42,6 @@ input {
 }
 
 .error{
-    color:red;
+    color:rgb(170, 0, 0);
     font-size: 14px;
 }

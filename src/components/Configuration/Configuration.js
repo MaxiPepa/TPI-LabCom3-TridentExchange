@@ -1,26 +1,23 @@
 import "./Configuration.css";
 
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../Contexts/ThemeContext";
 import { useAuth } from "../Contexts/AuthContext";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const Configuration = () => {
-  const [themeValue, setThemeValue] = useState("light");
   const [newPassword, setNewPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const { userInfo, changeAccountPassword, eliminateUser } = useAuth();
+  const { themeValue, changeThemeHandler } = useTheme();
 
   useEffect(() => {
     if (userInfo === null) {
       navigate("/");
     }
   }, [userInfo, navigate]);
-
-  const changeThemeHandler = (event) => {
-    setThemeValue(event.target.value);
-  };
 
   const changePasswordHandler = (event) => {
     setNewPassword(event.target.value);
@@ -105,16 +102,19 @@ const Configuration = () => {
   return (
     <>
       <h1>Configuración</h1>
-      <div className="configuration-menu">
+      <div
+        className={"configuration-menu " + themeValue}
+        id="configuration-menu"
+      >
         <h2>Tema</h2>
-        <div className="theme-switcher">
+        <div className={"theme-switcher " + themeValue} id="theme-container">
           <input
             type="radio"
             id="light-theme"
             name="themes"
             value="light"
             checked={themeValue === "light" ? true : false}
-            onChange={changeThemeHandler}
+            onChange={(event) => changeThemeHandler(event.target.value)}
           />
           <label htmlFor="light-theme">
             <span>
@@ -127,14 +127,14 @@ const Configuration = () => {
             name="themes"
             value="dark"
             checked={themeValue === "dark" ? true : false}
-            onChange={changeThemeHandler}
+            onChange={(event) => changeThemeHandler(event.target.value)}
           />
           <label htmlFor="dark-theme">
             <span>
               <i className="bi bi-moon-fill"></i> Dark
             </span>
           </label>
-          <span className="slider"></span>
+          <span className={"slider " + themeValue} id="themeSlider"></span>
         </div>
         <h2>Cambiar contraseña</h2>
         <input
@@ -147,7 +147,7 @@ const Configuration = () => {
         />
         {errors.password && <div className="error">{errors.password}</div>}
         <button
-          className="change-password"
+          className={"change-password " + themeValue}
           onClick={confirmButtonHandler}
           type="button"
         >

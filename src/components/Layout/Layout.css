@@ -1,12 +1,25 @@
-#divBody {
+.divBody {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   position: absolute;
+}
+
+#fullPage.light{
   background-image: linear-gradient(#e4f4f4, var(--c-menu-back));
 }
 
-main{
-    min-height: 100vh;
+#fullPage.dark {
+  background-image: linear-gradient(
+    var(--c-dark-theme-body1),
+    var(--c-dark-theme-body2),
+    var(--c-dark-theme-body2)
+  );
 }
+
+main {
+  min-height: 100vh;
+}
+
+

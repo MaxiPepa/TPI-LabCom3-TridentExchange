@@ -1,70 +1,86 @@
 header {
-    width: 100%;
-    background-image: linear-gradient(#19cccc, #228d8d);
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    height: 175px;
+  width: 100%;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  height: 175px;
+}
+header.light {
+  background-image: linear-gradient(#19cccc, #228d8d);
 }
 
+header.dark {
+  background-image: linear-gradient(
+    var(--c-dark-theme-1),
+    var(--c-dark-theme-2)
+  );
+}
 nav {
-    width: 90%;
-    margin: auto;
-    padding: 35px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 img {
-    width: 20%;
-    height: 20%;
+  width: 20%;
+  height: 20%;
 }
 
 @media only screen and (max-width: 750px) {
-    img {
-        width: 40%;
-        height: 40%;
-    }
+  img {
+    width: 40%;
+    height: 40%;
+  }
 }
 
-.singed-in-user{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    text-align: center;
-    font-weight: 500;
-    font-size:16px;
-    background-color: var(--c-button-back);
-    border-radius: 20px;
-    padding: 10px;
-    color: white;
-    box-shadow: 1px 1px 10px var(--c-black-box-shadow);
-
+.signed-in-user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  box-shadow: 1px 1px 10px var(--c-black-box-shadow);
 }
 
-.button-singed-in-user{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+#signed-in-user.light {
+  background-color: var(--c-button-back);
 }
 
-.button-singed-in-user button, .button-singed-in-user a{
-    background-color: var(--c-button-back);
-    border-radius: 20px;
-    font-size: 12px;
-    color: var(--c-button-hover);
-    padding: 5px;
-    border: 1px solid var(--c-button-hover); 
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    font-weight: 500;
+#signed-in-user.dark {
+  background-color: var(--c-menu-back-dark);
 }
 
-.button-singed-in-user button:hover, .button-singed-in-user a:hover{
-    background-color: var(--c-button-hover);
-    color: black;
-    font-weight: 500;
-    box-shadow: 1px 1px 10px;
+.button-signed-in-user {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+.button-signed-in-user button,
+.button-signed-in-user a {
+  background-color: var(--c-button-back);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--c-button-hover);
+  padding: 5px;
+  border: 1px solid var(--c-button-hover);
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.button-signed-in-user button:hover,
+.button-signed-in-user a:hover {
+  background-color: var(--c-button-hover);
+  color: black;
+  font-weight: 500;
+  box-shadow: 1px 1px 10px;
+}

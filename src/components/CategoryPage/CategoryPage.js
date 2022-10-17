@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
+import { useTheme } from "../Contexts/ThemeContext";
 
 import "./CategoryPage.css";
 
 const CategoryPage = () => {
   const navigate = useNavigate();
   const { userInfo } = useAuth();
+  const {themeValue} = useTheme();
 
   useEffect(() => {
     if (userInfo === null) {
@@ -36,8 +38,10 @@ const CategoryPage = () => {
           <h1>Juguetería</h1>
         </Link>
       </div>
-      <NavLink to="/new-offer" className="new-offer-bubble">
-        <i className="bi bi-plus-circle-dotted"> Nueva oferta</i>
+      <NavLink to="/new-offer" className={'new-offer-bubble new-offer-bubble-' + themeValue} id="offerBubbleButton">
+        <i className="bi bi-plus-circle-dotted"/>
+        <p>Nueva</p>
+        <p>Oferta</p>
       </NavLink>
       <Outlet />
     </>
