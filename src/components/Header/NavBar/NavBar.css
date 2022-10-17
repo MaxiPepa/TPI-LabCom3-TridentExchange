@@ -80,7 +80,14 @@ img {
 }
 
 #darkU button, #darkU a{
+    background-color: #3b0909;
+    border: 1px solid #8C0000;
+    color: #8C0000;
+}
+
+#darkU button:hover, #darkU a:hover{
     background-color: #bd7e7e;
     border: 1px solid var(--c-dark-theme-1);
     color: var(--c-dark-theme-2);
+    box-shadow: 1px 1px 10px #643B3B;
 }
