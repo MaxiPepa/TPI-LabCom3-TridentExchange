@@ -1,10 +1,14 @@
-#divBody {
+.divBody {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   position: absolute;
   background-image: linear-gradient(#e4f4f4, var(--c-menu-back));
+}
+
+#dark{
+  background-image: linear-gradient(#121212, #1c0101, #121212 );
 }
 
 main{
