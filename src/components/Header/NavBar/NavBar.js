@@ -25,9 +25,9 @@ const NavBar = () => {
           </NavLink>
         </section>
         {userInfo != null && (
-          <div id={themeValue + 'U'} className="singed-in-user">
+          <div className={"signed-in-user " + themeValue} id="signed-in-user">
             <p>BIENVENIDO {userInfo.email}</p>
-            <section className="button-singed-in-user">
+            <section className="button-signed-in-user">
               <NavLink to="/configuracion">Configuración</NavLink>
               <button type="button" onClick={logOutButtonHandler}>
                 Desconectarse

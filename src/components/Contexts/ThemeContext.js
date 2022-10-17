@@ -9,7 +9,7 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [themeValue, setThemeValue] = useState("ligth");
+  const [themeValue, setThemeValue] = useState("light");
 
   const changeThemeHandler = (event) => {
     setThemeValue(event);

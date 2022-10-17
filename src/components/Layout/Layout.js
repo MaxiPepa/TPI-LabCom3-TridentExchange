@@ -9,7 +9,7 @@ import NavBar from "../Header/NavBar/NavBar";
 const Layout = () => {
   const { themeValue } = useTheme();
   return (
-    <div id={themeValue} className="divBody">
+    <div className= {themeValue + ' divBody'} id="fullPage" >
       <NavBar />
       <main>
         <Outlet />

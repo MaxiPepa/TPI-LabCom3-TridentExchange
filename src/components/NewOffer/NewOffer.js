@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
 import { useDatabase } from "../Contexts/DatabaseContext";
+import { useTheme } from "../Contexts/ThemeContext";
 import Swal from "sweetalert2";
 
 const NewOffer = () => {
@@ -16,6 +17,7 @@ const NewOffer = () => {
   const navigate = useNavigate();
   const { userInfo } = useAuth();
   const { insertData } = useDatabase();
+  const { themeValue } = useTheme();
 
   useEffect(() => {
     if (userInfo === null) {
@@ -76,7 +78,7 @@ const NewOffer = () => {
   };
 
   return (
-    <form className="new-offer-form">
+    <form className={themeValue + " new-offer-form"}>
       <label htmlFor="title">Título:</label>
       <input
         id="title"
@@ -121,7 +123,7 @@ const NewOffer = () => {
         <option value="garden">Jardinería</option>
         <option value="toyStore">Juguetería</option>
       </select>
-      <button type="button" onClick={submitOfferHandler}>
+      <button type="button" className={themeValue} onClick={submitOfferHandler}>
         Ingresar oferta
       </button>
     </form>

@@ -1,8 +1,44 @@
 :root {
-    --c-button-back: #093030;
-    --c-button-hover: #228d8d;
-    --c-menu-back: #a6d3d3;
-    --c-black-box-shadow: #001d17;
-    --c-dark-theme-1:#560000;
-    --c-dark-theme-2:#5e0606;
+  --c-button-back: #093030;
+  --c-button-hover: #48e8e8;
+  --c-menu-back: #a6d3d3;
+  --c-menu-back-dark: #182b33;
+  --c-black-box-shadow: #001d17;
+  --c-dark-theme-1: #2c0c67;
+  --c-dark-theme-2: #150244;
+  --c-dark-theme-body1: #191926;
+  --c-dark-theme-body2: #4a4845;
+}
+
+button {
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+button.light:hover {
+  background-color: var(--c-button-hover);
+  color: black;
+  font-weight: 700;
+}
+
+button.light {
+  background-color: var(--c-button-back);
+}
+
+button.dark {
+  background-color: var(--c-dark-theme-1);
+  color: white;
+}
+
+button.dark:hover {
+  background-color: var(--c-dark-theme-2);
+  color: white;
+  font-weight: 700;
 }

@@ -1,12 +1,14 @@
 header {
-  background-image: linear-gradient(#19cccc, #228d8d);
   width: 100%;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
   height: 175px;
 }
+header.light {
+  background-image: linear-gradient(#19cccc, #228d8d);
+}
 
-.dark {
+header.dark {
   background-image: linear-gradient(
     var(--c-dark-theme-1),
     var(--c-dark-theme-2)
@@ -33,28 +35,35 @@ img {
   }
 }
 
-.singed-in-user {
+.signed-in-user {
   display: flex;
   gap: 10px;
   align-items: center;
   text-align: center;
   font-weight: 500;
   font-size: 16px;
-  background-color: var(--c-button-back);
   border-radius: 20px;
   padding: 10px;
   color: white;
   box-shadow: 1px 1px 10px var(--c-black-box-shadow);
 }
 
-.button-singed-in-user {
+#signed-in-user.light {
+  background-color: var(--c-button-back);
+}
+
+#signed-in-user.dark {
+  background-color: var(--c-menu-back-dark);
+}
+
+.button-signed-in-user {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.button-singed-in-user button,
-.button-singed-in-user a {
+.button-signed-in-user button,
+.button-signed-in-user a {
   background-color: var(--c-button-back);
   border-radius: 20px;
   font-size: 12px;
@@ -65,29 +74,13 @@ img {
   text-decoration: none;
   text-align: center;
   font-weight: 500;
+  margin-top: 0;
 }
 
-.button-singed-in-user button:hover,
-.button-singed-in-user a:hover {
+.button-signed-in-user button:hover,
+.button-signed-in-user a:hover {
   background-color: var(--c-button-hover);
   color: black;
   font-weight: 500;
   box-shadow: 1px 1px 10px;
-}
-
-#darkU{
-    background-image: linear-gradient(#121212, #1c0101, #121212 );
-}
-
-#darkU button, #darkU a{
-    background-color: #3b0909;
-    border: 1px solid #8C0000;
-    color: #8C0000;
-}
-
-#darkU button:hover, #darkU a:hover{
-    background-color: #bd7e7e;
-    border: 1px solid var(--c-dark-theme-1);
-    color: var(--c-dark-theme-2);
-    box-shadow: 1px 1px 10px #643B3B;
 }

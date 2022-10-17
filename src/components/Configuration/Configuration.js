@@ -102,9 +102,12 @@ const Configuration = () => {
   return (
     <>
       <h1>Configuración</h1>
-      <div className="configuration-menu" id={themeValue + 'D'}>
+      <div
+        className={"configuration-menu " + themeValue}
+        id="configuration-menu"
+      >
         <h2>Tema</h2>
-        <div className="theme-switcher">
+        <div className={"theme-switcher " + themeValue} id="theme-container">
           <input
             type="radio"
             id="light-theme"
@@ -131,7 +134,7 @@ const Configuration = () => {
               <i className="bi bi-moon-fill"></i> Dark
             </span>
           </label>
-          <span className="slider"></span>
+          <span className={"slider " + themeValue} id="themeSlider"></span>
         </div>
         <h2>Cambiar contraseña</h2>
         <input
@@ -144,7 +147,7 @@ const Configuration = () => {
         />
         {errors.password && <div className="error">{errors.password}</div>}
         <button
-          className="change-password"
+          className={"change-password " + themeValue}
           onClick={confirmButtonHandler}
           type="button"
         >
