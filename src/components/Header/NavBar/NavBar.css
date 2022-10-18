@@ -44,16 +44,17 @@ img {
   font-size: 16px;
   border-radius: 20px;
   padding: 10px;
-  color: white;
   box-shadow: 1px 1px 10px var(--c-black-box-shadow);
 }
 
 #signed-in-user.light {
   background-color: var(--c-button-back);
+  color: white;
 }
 
 #signed-in-user.dark {
   background-color: var(--c-menu-back-dark);
+  color: wheat;
 }
 
 .button-signed-in-user {

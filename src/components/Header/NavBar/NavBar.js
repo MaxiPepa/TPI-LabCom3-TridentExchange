@@ -7,9 +7,10 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const { userInfo, logout } = useAuth();
-  const { themeValue } = useTheme();
+  const { themeValue, changeThemeHandler } = useTheme();
 
   const logOutButtonHandler = async () => {
+    await changeThemeHandler("light")
     await logout();
   };
 
@@ -19,7 +20,7 @@ const NavBar = () => {
         <section>
           <NavLink to="./categorias">
             <img
-              src="/img/trident-exchange-logo.png"
+              src={themeValue === "light" ? "/img/trident-exchange-logo-lightMode.png" : "/img/trident-exchange-logo-darkMode.png"}
               alt="Trident Exchange Logo"
             />
           </NavLink>

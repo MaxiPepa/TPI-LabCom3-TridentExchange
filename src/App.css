@@ -22,23 +22,25 @@ button {
   margin-top: 5px;
 }
 
+button.light {
+  background-color: var(--c-button-back);
+  color: white;
+}
+
 button.light:hover {
   background-color: var(--c-button-hover);
   color: black;
   font-weight: 700;
 }
 
-button.light {
-  background-color: var(--c-button-back);
-}
 
 button.dark {
   background-color: var(--c-dark-theme-1);
-  color: white;
+  color: wheat;
 }
 
 button.dark:hover {
   background-color: var(--c-dark-theme-2);
-  color: white;
+  color: wheat;
   font-weight: 700;
 }

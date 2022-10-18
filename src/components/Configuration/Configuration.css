@@ -18,6 +18,12 @@
   color: white;
 }
 
+.delete-user-button:hover {
+  background-color: #be0202;
+  color: white;
+  font-weight: 700;
+}
+
 .error {
   color: red;
   font-size: 14px;
@@ -84,7 +90,14 @@
   bottom: 3px;
   border-radius: 8px;
   transition: 0.3s ease, 0.25s ease-out;
+}
+
+#themeSlider.light {
   background-color: var(--c-button-hover);
+}
+
+#themeSlider.dark {
+  background-color: var(--c-dark-theme-1);
 }
 
 .theme-switcher input:nth-of-type(1):checked ~ .slider {
@@ -105,7 +118,10 @@
   color: wheat;
 }
 
+h1.light {
+  color: black;
+}
 
-
-
-
+h1.dark {
+  color: wheat;
+}

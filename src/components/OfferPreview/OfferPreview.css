@@ -5,3 +5,19 @@
     margin: 10px;
     padding: 10px;
 }
+
+h2 {
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+h2.light {
+    color: black;
+    background-color: var(--c-menu-back);
+}
+
+h2.dark {
+    color: wheat;
+    background-color: var(--c-menu-back-dark);
+}

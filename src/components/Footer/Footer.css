@@ -9,12 +9,10 @@ footer.dark {
     var(--c-dark-theme-1),
     var(--c-dark-theme-2)
   );
-  color: white;
+  color: wheat;
 }
 
 footer.light {
   background-image: linear-gradient(#228d8d, #19cccc);
-}
-.dark a {
-  color: aquamarine;
+  color: black;
 }
