@@ -101,7 +101,7 @@ const Configuration = () => {
 
   return (
     <>
-      <h1>Configuración</h1>
+      <h1 className={themeValue}>Configuración</h1>
       <div
         className={"configuration-menu " + themeValue}
         id="configuration-menu"

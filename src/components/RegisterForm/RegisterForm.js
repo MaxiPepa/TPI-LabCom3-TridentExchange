@@ -3,7 +3,7 @@ import "./RegisterForm.css";
 import { useEffect, useState } from "react";
 import { useAuth } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const RegisterForm = () => {
   const [enteredUser, setEnteredUser] = useState("");
@@ -39,7 +39,7 @@ const RegisterForm = () => {
     } else if (enteredPassword.length < 6) {
       setErrors({
         ...errors,
-        password: "La contraseña debe tener al menos 6 caracteres",
+        password: "La contraseña no cumple los requisitos.",
       });
     } else {
       let _errors = { ...errors };
@@ -106,9 +106,13 @@ const RegisterForm = () => {
           onBlur={onPasswordInputBlur}
         ></input>
         {errors.password && <div className="error">{errors.password}</div>}
-        <button type="button" onClick={registerButtonHandler}>
-          Registrarse
-        </button>
+        <span>La contraseña debe tener al menos 6 caracteres</span>
+        <div className="button_register">
+          <button type="button" onClick={registerButtonHandler}>
+            Registrarse
+          </button>
+          <NavLink to="/login">Volver</NavLink>
+        </div>
       </form>
     </>
   );

@@ -3,10 +3,12 @@ import "./OfferItem.css";
 import { useAuth } from "../Contexts/AuthContext";
 import { useDatabase } from "../Contexts/DatabaseContext";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const OfferItem = ({ offerList }) => {
   const { userInfo } = useAuth();
   const { removeData } = useDatabase();
+  const navigate = useNavigate();
 
   const deleteOfferHandler = async (category, offerId, offerUID, actualUID) => {
     if (offerUID === actualUID) {
@@ -25,6 +27,7 @@ const OfferItem = ({ offerList }) => {
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate("/categorias")
         }
       });
     } else {

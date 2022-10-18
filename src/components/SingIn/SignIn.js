@@ -105,7 +105,7 @@ const SignIn = () => {
   };
 
   return (
-    <>
+    <div>
       <h1>Iniciar Sesión</h1>
       <div className="sign-in">
         <label htmlFor="user">Usuario:</label>
@@ -131,7 +131,7 @@ const SignIn = () => {
           <NavLink to="/register-form">Registrarse</NavLink>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

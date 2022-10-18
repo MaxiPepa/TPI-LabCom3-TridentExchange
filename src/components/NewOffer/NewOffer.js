@@ -69,16 +69,11 @@ const NewOffer = () => {
       timer: 1500,
     });
 
-    setTitle("");
-    setDescription("");
-    setPhotoLink("");
-    setPreference("");
-    setContact("");
-    setCategory("appliance");
+    navigate("/categorias");
   };
 
   return (
-    <form className={themeValue + " new-offer-form"}>
+    <form id="new-offer-form" className={themeValue + " new-offer-form"}>
       <label htmlFor="title">Título:</label>
       <input
         id="title"
@@ -86,7 +81,7 @@ const NewOffer = () => {
         value={title}
         onChange={changeTitleHandler}
       />
-      <label htmlFor="description">Description:</label>
+      <label htmlFor="description">Descripción:</label>
       <textarea
         id="description"
         rows="15"
