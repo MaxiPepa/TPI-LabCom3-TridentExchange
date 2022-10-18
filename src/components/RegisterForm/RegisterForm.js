@@ -39,7 +39,7 @@ const RegisterForm = () => {
     } else if (enteredPassword.length < 6) {
       setErrors({
         ...errors,
-        password: "La contraseña debe tener al menos 6 caracteres",
+        password: "La contraseña no cumple los requisitos.",
       });
     } else {
       let _errors = { ...errors };
@@ -106,6 +106,7 @@ const RegisterForm = () => {
           onBlur={onPasswordInputBlur}
         ></input>
         {errors.password && <div className="error">{errors.password}</div>}
+        <span>La contraseña debe tener al menos 6 caracteres</span>
         <div className="button_register">
           <button type="button" onClick={registerButtonHandler}>
             Registrarse
