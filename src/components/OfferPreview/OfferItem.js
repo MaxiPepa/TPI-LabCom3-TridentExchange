@@ -4,14 +4,23 @@ import { useAuth } from "../Contexts/AuthContext";
 import { useDatabase } from "../Contexts/DatabaseContext";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const OfferItem = ({ offerList }) => {
   const { userInfo } = useAuth();
-  const { removeData } = useDatabase();
+  const { removeData, selectData } = useDatabase();
+  const [adminList, setAdminList] = useState();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const getAdmins = async () => {
+      setAdminList(await selectData("administrators"));
+    };
+    getAdmins();
+  }, [selectData]);
+
   const deleteOfferHandler = async (category, offerId, offerUID, actualUID) => {
-    if (offerUID === actualUID) {
+    if (offerUID === actualUID || adminList.includes(userInfo.uid)) {
       Swal.fire({
         title: "¿Estás seguro que quieres borrar la publicación?",
         showDenyButton: true,
@@ -27,7 +36,7 @@ const OfferItem = ({ offerList }) => {
             showConfirmButton: false,
             timer: 1500,
           });
-          navigate("/categorias")
+          navigate("/categorias");
         }
       });
     } else {

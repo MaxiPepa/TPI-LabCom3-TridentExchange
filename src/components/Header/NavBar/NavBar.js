@@ -4,14 +4,34 @@ import { useAuth } from "../../Contexts/AuthContext";
 import { useTheme } from "../../Contexts/ThemeContext";
 
 import { NavLink } from "react-router-dom";
+import { useDatabase } from "../../Contexts/DatabaseContext";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
   const { userInfo, logout } = useAuth();
   const { themeValue, changeThemeHandler } = useTheme();
+  const { selectData } = useDatabase();
+  const [adminList, setAdminList] = useState();
+
+  useEffect(() => {
+    const getAdmins = async () => {
+      setAdminList(await selectData("administrators"));
+    };
+    getAdmins();
+  }, [selectData]);
 
   const logOutButtonHandler = async () => {
-    await changeThemeHandler("light")
+    await changeThemeHandler("light");
     await logout();
+  };
+
+  const administratorInfoButton = () => {
+    Swal.fire(
+      "¡Eres administrador!",
+      "Eso te permite borrar publicaciones aunque no sean tuyas. Recuerda que es una función solo hecha para moderar publicaciones, se te quitaran los permisos en caso usarlos indebidamente.",
+      "info"
+    );
   };
 
   return (
@@ -20,7 +40,11 @@ const NavBar = () => {
         <section>
           <NavLink to="./categorias">
             <img
-              src={themeValue === "light" ? "/img/trident-exchange-logo-lightMode.png" : "/img/trident-exchange-logo-darkMode.png"}
+              src={
+                themeValue === "light"
+                  ? "/img/trident-exchange-logo-lightMode.png"
+                  : "/img/trident-exchange-logo-darkMode.png"
+              }
               alt="Trident Exchange Logo"
             />
           </NavLink>
@@ -33,6 +57,11 @@ const NavBar = () => {
               <button type="button" onClick={logOutButtonHandler}>
                 Desconectarse
               </button>
+              {adminList.includes(userInfo.uid) && (
+                <button id="adminButton" type="button" className="admin-button" onClick={administratorInfoButton}>
+                  Info. Admin
+                </button>
+              )}
             </section>
           </div>
         )}
