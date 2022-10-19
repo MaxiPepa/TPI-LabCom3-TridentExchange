@@ -59,7 +59,7 @@ const NavBar = () => {
               </button>
               {adminList.includes(userInfo.uid) && (
                 <button type="button" onClick={administratorInfoButton}>
-                  Administrador
+                  Info. Admin
                 </button>
               )}
             </section>
