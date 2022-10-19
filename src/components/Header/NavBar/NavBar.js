@@ -58,7 +58,7 @@ const NavBar = () => {
                 Desconectarse
               </button>
               {adminList.includes(userInfo.uid) && (
-                <button type="button" onClick={administratorInfoButton}>
+                <button id="adminButton" type="button" className="admin-button" onClick={administratorInfoButton}>
                   Info. Admin
                 </button>
               )}

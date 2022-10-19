@@ -85,3 +85,15 @@ img {
   font-weight: 500;
   box-shadow: 1px 1px 10px;
 }
+
+#adminButton.admin-button {
+  background-color: #9f0000;
+  color: white;
+  border: 1px solid #9f0000;
+}
+
+#adminButton.admin-button:hover {
+  background-color: #be0202;
+  color: white;
+  font-weight: 700;
+}
