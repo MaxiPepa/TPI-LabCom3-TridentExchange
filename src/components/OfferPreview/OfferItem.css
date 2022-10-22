@@ -1,0 +1,5 @@
+.offer-card>img {
+    width: 700px;
+    height: 500px;
+    object-fit: fill;
+}
