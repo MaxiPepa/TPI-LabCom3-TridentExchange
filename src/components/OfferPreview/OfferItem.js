@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 const OfferItem = ({ offerList }) => {
   const { userInfo } = useAuth();
   const { removeData, selectData } = useDatabase();
@@ -50,30 +51,36 @@ const OfferItem = ({ offerList }) => {
 
   const offers = offerList.map((offer) => {
     return (
-      <div className="offer-card">
-        <img src={offer.photoLink} alt="Foto de la oferta" />
-        <h2>{offer.title}</h2>
-        <p>{offer.description}</p>
-        <p>{offer.preferredItem}</p>
-        <p>{offer.contact}</p>
-        <button
-          type="button"
-          onClick={() => {
-            deleteOfferHandler(
-              offer.category,
-              offer.id,
-              offer.userId,
-              userInfo.uid
-            );
-          }}
-        >
-          <i className="bi bi-trash3"></i>
-        </button>
+      <div className="offer-item">
+        <div className="img-card">
+          <img src={offer.photoLink} alt="Foto de la oferta" />
+        </div>
+        <div className="content-card">
+          <h2>{offer.title}</h2>
+          <p>{offer.description}</p>
+          <h4>Cambio por:</h4>
+          <p>{offer.preferredItem}</p>
+          <h4>Contacto:</h4>
+          <p>{offer.contact}</p>
+        </div>
+          <button
+            type="button"
+            onClick={() => {
+              deleteOfferHandler(
+                offer.category,
+                offer.id,
+                offer.userId,
+                userInfo.uid
+              );
+            }}
+          >
+            <i className="bi bi-trash3"></i>
+          </button>
       </div>
     );
   });
 
-  return <div>{offers}</div>;
+  return <div className="offer-container">{offers}</div>;
 };
 
 export default OfferItem;
