@@ -1,5 +1,67 @@
-.offer-card>img {
-    width: 700px;
-    height: 500px;
-    object-fit: fill;
+.offer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  gap: 30px;
+  justify-content: center;
+}
+
+.offer-item {
+  height: 650px;
+  width: 400px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--c-dark-theme-body1);
+  color: white;
+  position: relative;
+}
+
+.img-card > img {
+  width: 100%;
+  display: block;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.img-card {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.content-card {
+  padding: 15px;
+  height: 100%;
+  overflow: auto;
+}
+
+.content-card::-webkit-scrollbar {
+  width: 12px;
+}
+.content-card::-webkit-scrollbar-track {
+  background: var(--c-dark-theme-body1);
+}
+.content-card::-webkit-scrollbar-thumb {
+  background-color: var(--c-menu-back);
+  border-radius: 20px;
+  border: 3px solid var(--c-dark-theme-body1);
+}
+
+.content-card > h2 {
+  margin-top: 0;
+}
+
+.offer-item > button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #9f0000;
+  color: white;
+  margin: 5px;
+}
+
+.offer-item > button:hover{
+    background-color: #be0202;
 }
