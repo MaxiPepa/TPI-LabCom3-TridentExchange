@@ -14,7 +14,6 @@
   display: flex;
   flex-direction: column;
   background-color: var(--c-dark-theme-body1);
-  color: white;
   position: relative;
 }
 
@@ -64,4 +63,12 @@
 
 .offer-item > button:hover{
     background-color: #be0202;
+}
+
+div.content-card-color-light {
+  color: white;
+}
+
+div.content-card-color-dark {
+  color: wheat;
 }

@@ -5,12 +5,14 @@ import { useDatabase } from "../Contexts/DatabaseContext";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useTheme } from "../Contexts/ThemeContext";
 
 
 const OfferItem = ({ offerList }) => {
   const { userInfo } = useAuth();
   const { removeData, selectData } = useDatabase();
   const [adminList, setAdminList] = useState();
+  const { themeValue } = useTheme();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,11 +53,11 @@ const OfferItem = ({ offerList }) => {
 
   const offers = offerList.map((offer) => {
     return (
-      <div className="offer-item">
+      <div className="offer-item" >
         <div className="img-card">
           <img src={offer.photoLink} alt="Foto de la oferta" />
         </div>
-        <div className="content-card">
+        <div className={"content-card content-card-color-" + themeValue}>
           <h2>{offer.title}</h2>
           <p>{offer.description}</p>
           <h4>Cambio por:</h4>
