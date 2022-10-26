@@ -28,6 +28,11 @@ nav {
 img {
   width: 20%;
   height: 20%;
+  transition: transform 0.2s ease;
+}
+
+img:hover {
+  transform: scale(1.2);
 }
 
 @media only screen and (max-width: 750px) {
@@ -80,22 +85,52 @@ img {
   margin-top: 0;
 }
 
-.button-signed-in-user button:hover,
-.button-signed-in-user a:hover {
+.button-signed-in-user-color-light button, .button-signed-in-user-color-light a {
+  color: var(--c-button-hover);
+  border: 1px solid var(--c-button-hover);
+}
+
+.button-signed-in-user-color-dark button, .button-signed-in-user-color-dark a {
+  color: wheat;
+  border: 1px solid wheat;
+}
+
+.button-signed-in-user-color-light button:hover,
+.button-signed-in-user-color-light a:hover {
   background-color: var(--c-button-hover);
   color: black;
   font-weight: 500;
   box-shadow: 1px 1px 10px;
 }
 
-#adminButton.admin-button {
+.button-signed-in-user-color-dark button:hover,
+.button-signed-in-user-color-dark a:hover {
+  background-color: wheat;
+  color: black;
+  font-weight: 500;
+  box-shadow: 1px 1px 10px;
+}
+
+#adminButton.admin-button-color-light {
   background-color: #9f0000;
   color: white;
   border: 1px solid #9f0000;
 }
 
-#adminButton.admin-button:hover {
+#adminButton.admin-button-color-light:hover {
   background-color: #be0202;
   color: white;
+  font-weight: 700;
+}
+
+#adminButton.admin-button-color-dark {
+  background-color: #9f0000;
+  color: wheat;
+  border: 1px solid #9f0000;
+}
+
+#adminButton.admin-button-color-dark:hover {
+  background-color: #be0202;
+  color: wheat;
   font-weight: 700;
 }

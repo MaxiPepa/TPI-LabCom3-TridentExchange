@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useTheme } from "../Contexts/ThemeContext";
 
-
 const OfferItem = ({ offerList }) => {
   const { userInfo } = useAuth();
   const { removeData, selectData } = useDatabase();
@@ -53,7 +52,7 @@ const OfferItem = ({ offerList }) => {
 
   const offers = offerList.map((offer) => {
     return (
-      <div className="offer-item" >
+      <div className="offer-item">
         <div className="img-card">
           <img src={offer.photoLink} alt="Foto de la oferta" />
         </div>
@@ -65,19 +64,20 @@ const OfferItem = ({ offerList }) => {
           <h4>Contacto:</h4>
           <p>{offer.contact}</p>
         </div>
-          <button
-            type="button"
-            onClick={() => {
-              deleteOfferHandler(
-                offer.category,
-                offer.id,
-                offer.userId,
-                userInfo.uid
-              );
-            }}
-          >
-            <i className="bi bi-trash3"></i>
-          </button>
+        <button
+          className={"trash-color-" + themeValue}
+          type="button"
+          onClick={() => {
+            deleteOfferHandler(
+              offer.category,
+              offer.id,
+              offer.userId,
+              userInfo.uid
+            );
+          }}
+        >
+          <i className="bi bi-trash3"></i>
+        </button>
       </div>
     );
   });

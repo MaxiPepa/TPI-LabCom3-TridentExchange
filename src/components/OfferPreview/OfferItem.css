@@ -65,6 +65,14 @@
     background-color: #be0202;
 }
 
+button.trash-color-light {
+  color: white;
+}
+
+button.trash-color-dark {
+  color: wheat;
+}
+
 div.content-card-color-light {
   color: white;
 }
