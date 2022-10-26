@@ -9,9 +9,20 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [themeValue, setThemeValue] = useState("light");
+  const getThemeFromLocalStorage = () => {
+    let lsColor = localStorage.getItem("theme");
+    if (lsColor === null) {
+      localStorage.setItem("theme", "light");
+      return "light";
+    } else {
+      return lsColor;
+    }
+  };
+
+  const [themeValue, setThemeValue] = useState(getThemeFromLocalStorage());
 
   const changeThemeHandler = (event) => {
+    localStorage.setItem("theme", event);
     setThemeValue(event);
   };
 
