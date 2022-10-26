@@ -28,6 +28,11 @@ nav {
 img {
   width: 20%;
   height: 20%;
+  transition: transform 0.2s ease;
+}
+
+img:hover {
+  transform: scale(1.2);
 }
 
 @media only screen and (max-width: 750px) {
