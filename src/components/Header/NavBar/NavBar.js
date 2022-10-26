@@ -51,13 +51,13 @@ const NavBar = () => {
         {userInfo != null && (
           <div className={"signed-in-user " + themeValue} id="signed-in-user">
             <p>BIENVENIDO {userInfo.email}</p>
-            <section className="button-signed-in-user">
+            <section className={"button-signed-in-user button-signed-in-user-color-" + themeValue}>
               <NavLink to="/configuracion">Configuración</NavLink>
               <button type="button" onClick={logOutButtonHandler}>
                 Desconectarse
               </button>
               {adminList.includes(userInfo.uid) && (
-                <button id="adminButton" type="button" className="admin-button" onClick={administratorInfoButton}>
+                <button id="adminButton" type="button" className={"admin-button-color-" + themeValue} onClick={administratorInfoButton}>
                   Info. Admin
                 </button>
               )}
