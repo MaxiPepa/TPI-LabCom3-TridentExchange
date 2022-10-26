@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Contexts/AuthContext";
+import { useTheme } from "../Contexts/ThemeContext";
 import Swal from "sweetalert2";
 
 import "./SignIn.css";
@@ -12,6 +13,7 @@ const SignIn = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const { login, userInfo } = useAuth();
+  const { themeValue } = useTheme();
 
   useEffect(() => {
     if (userInfo != null) {
@@ -105,9 +107,9 @@ const SignIn = () => {
   };
 
   return (
-    <div>
+    <div className={"sign-in-container-color-" + themeValue}>
       <h1>Iniciar Sesión</h1>
-      <div className="sign-in">
+      <div className={"sign-in sign-in-color-" + themeValue}>
         <label htmlFor="user">Usuario:</label>
         <input
           type="text"
@@ -124,7 +126,7 @@ const SignIn = () => {
           onBlur={onPasswordInputBlur}
         />
         {errors.password && <div className="error">{errors.password}</div>}
-        <div className="button_sign-in">
+        <div className={"buttons-sign-in buttons-sign-in-color-" + themeValue}>
           <button type="button" onClick={loginButtonHandler}>
             Iniciar Sesión
           </button>
