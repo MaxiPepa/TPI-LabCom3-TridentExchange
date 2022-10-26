@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
 import { useNavigate, NavLink } from "react-router-dom";
+import { useTheme } from "../Contexts/ThemeContext";
 
 const RegisterForm = () => {
   const [enteredUser, setEnteredUser] = useState("");
@@ -11,6 +12,7 @@ const RegisterForm = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const { register, userInfo } = useAuth();
+  const { themeValue } = useTheme();
 
   useEffect(() => {
     if (userInfo != null) {
@@ -87,9 +89,9 @@ const RegisterForm = () => {
   };
 
   return (
-    <>
+    <div className={"register-container-color-" + themeValue}>
       <h1>Formulario de registro:</h1>
-      <form className="register-form">
+      <form className={"register-form register-form-color-" + themeValue}>
         <label htmlFor="user">Email:</label>
         <input
           type="text"
@@ -107,14 +109,14 @@ const RegisterForm = () => {
         ></input>
         {errors.password && <div className="error">{errors.password}</div>}
         <span>La contraseña debe tener al menos 6 caracteres</span>
-        <div className="button_register">
+        <div className={"buttons-register buttons-register-color-" + themeValue}>
           <button type="button" onClick={registerButtonHandler}>
             Registrarse
           </button>
           <NavLink to="/login">Volver</NavLink>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

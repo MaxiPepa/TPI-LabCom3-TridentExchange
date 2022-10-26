@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 const NavBar = () => {
   const { userInfo, logout } = useAuth();
-  const { themeValue, changeThemeHandler } = useTheme();
+  const { themeValue } = useTheme();
   const { selectData } = useDatabase();
   const [adminList, setAdminList] = useState();
 
@@ -22,7 +22,6 @@ const NavBar = () => {
   }, [selectData]);
 
   const logOutButtonHandler = async () => {
-    await changeThemeHandler("light");
     await logout();
   };
 

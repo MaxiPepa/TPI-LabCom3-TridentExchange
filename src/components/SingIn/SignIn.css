@@ -1,15 +1,30 @@
+.sign-in-container-color-light {
+    color: black;
+}
+
+.sign-in-container-color-dark {
+    color: wheat;
+}
+
 div.sign-in {
     width: 250px;
     display: flex;
     flex-direction: column;
-    background-color: var(--c-menu-back);
     padding: 20px;
     border-radius: 30px;
     font-weight: 700;
     box-shadow: 10px 10px 30px var(--c-black-box-shadow);
 }
 
-.button_sign-in{
+div.sign-in-color-light {
+    background-color: var(--c-menu-back);
+}
+
+div.sign-in-color-dark {
+    background-color: var(--c-menu-back-dark);
+}
+
+.buttons-sign-in{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -17,10 +32,8 @@ div.sign-in {
 }
 
 .sign-in button, .sign-in a{
-    background-color:var(--c-button-back);
     border-radius: 20px;
     font-size: 16px;
-    color: white;
     padding: 10px;
     border: none; 
     cursor: pointer;
@@ -29,9 +42,25 @@ div.sign-in {
     font-weight: 500;
 }
 
-.sign-in button:hover, .sign-in a:hover{
+.buttons-sign-in-color-light button, .buttons-sign-in-color-light a {
+    background-color:var(--c-button-back);
+    color: white;
+}
+
+.buttons-sign-in-color-dark button, .buttons-sign-in-color-dark a {
+    background-color:var(--c-dark-theme-1);
+    color: wheat
+}
+
+.buttons-sign-in-color-light button:hover, .buttons-sign-in-color-light a:hover {
     background-color: var(--c-button-hover);
     color: black;
+    font-weight: 700;
+}
+
+.buttons-sign-in-color-dark button:hover, .buttons-sign-in-color-dark a:hover {
+    background-color: var(--c-dark-theme-2);
+    color: wheat;
     font-weight: 700;
 }
 

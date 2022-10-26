@@ -1,25 +1,38 @@
+.register-container-color-light {
+    color: black;
+}
+
+.register-container-color-dark {
+    color: wheat;
+}
+
 .register-form {
     display: flex;
     flex-direction: column;
-    background-color: var(--c-menu-back);
     padding: 20px;
     border-radius: 30px;
     font-weight: 700;
     box-shadow: 10px 10px 30px var(--c-black-box-shadow);
 }
 
-.button_register{
+.register-form-color-light {
+    background-color: var(--c-menu-back);
+}
+
+.register-form-color-dark {
+    background-color: var(--c-menu-back-dark);
+}
+
+.buttons-register{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     gap: 5px;
 }
 
-.button_register button, .button_register a{
-    background-color:var(--c-button-back);
+.buttons-register button, .buttons-register a{
     border-radius: 20px;
     font-size: 16px;
-    color: white;
     padding: 10px;
     border: none; 
     cursor: pointer;
@@ -28,9 +41,25 @@
     font-weight: 500;
 }
 
-.button_register button:hover, .button_register a:hover{
+.buttons-register-color-light button, .buttons-register-color-light a {
+    background-color:var(--c-button-back);
+    color: white;
+}
+
+.buttons-register-color-dark button, .buttons-register-color-dark a {
+    background-color:var(--c-dark-theme-1);
+    color: wheat;
+}
+
+.buttons-register-color-light button:hover, .buttons-register-color-light a:hover {
     background-color: var(--c-button-hover);
     color: black;
+    font-weight: 700;
+}
+
+.buttons-register-color-dark button:hover, .buttons-register-color-dark a:hover {
+    background-color: var(--c-dark-theme-2);
+    color: wheat;
     font-weight: 700;
 }
 
