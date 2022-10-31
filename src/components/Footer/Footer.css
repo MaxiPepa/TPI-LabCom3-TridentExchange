@@ -16,3 +16,21 @@ footer.light {
   background-image: linear-gradient(#228d8d, #19cccc);
   color: black;
 }
+
+.git-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.git-link {
+  margin: 5px;
+  text-decoration: none;
+}
+
+.git-link:hover {
+  text-decoration: underline;
+}
+
+.git-link:visited {
+  color: inherit;
+}
